@@ -2,6 +2,6 @@ class Fiche < ApplicationRecord
   belongs_to :teacher
   belongs_to :chapter
 
-  has_many :reviews
-  has_many :favorites
+  has_many :reviews, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 end

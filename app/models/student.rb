@@ -3,6 +3,6 @@ class Student < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :reviews
-  has_many :favorites
+  has_many :reviews, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 end
