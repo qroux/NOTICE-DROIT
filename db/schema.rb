@@ -10,12 +10,65 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_25_170449) do
+ActiveRecord::Schema.define(version: 2019_02_26_112507) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "users", force: :cascade do |t|
+  create_table "chapters", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.bigint "speciality_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["speciality_id"], name: "index_chapters_on_speciality_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "student_id"
+    t.bigint "fiche_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fiche_id"], name: "index_favorites_on_fiche_id"
+    t.index ["student_id"], name: "index_favorites_on_student_id"
+  end
+
+  create_table "fiches", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.bigint "teacher_id"
+    t.bigint "chapter_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chapter_id"], name: "index_fiches_on_chapter_id"
+    t.index ["teacher_id"], name: "index_fiches_on_teacher_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "error_category"
+    t.text "comment"
+    t.integer "ranking"
+    t.bigint "student_id"
+    t.bigint "speciality_id"
+    t.bigint "fiche_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fiche_id"], name: "index_reviews_on_fiche_id"
+    t.index ["speciality_id"], name: "index_reviews_on_speciality_id"
+    t.index ["student_id"], name: "index_reviews_on_student_id"
+  end
+
+  create_table "specialities", force: :cascade do |t|
+    t.string "title"
+    t.string "status"
+    t.string "tag"
+    t.bigint "teacher_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["teacher_id"], name: "index_specialities_on_teacher_id"
+  end
+
+  create_table "students", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -23,8 +76,29 @@ ActiveRecord::Schema.define(version: 2019_02_25_170449) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_students_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
   end
 
+  create_table "teachers", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_teachers_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_teachers_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "chapters", "specialities"
+  add_foreign_key "favorites", "fiches", column: "fiche_id"
+  add_foreign_key "favorites", "students"
+  add_foreign_key "fiches", "chapters"
+  add_foreign_key "fiches", "teachers"
+  add_foreign_key "reviews", "fiches", column: "fiche_id"
+  add_foreign_key "reviews", "specialities"
+  add_foreign_key "reviews", "students"
+  add_foreign_key "specialities", "teachers"
 end
