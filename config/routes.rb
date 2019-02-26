@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'specialities/index'
+  get 'specialities/show'
+  get 'specialities/new'
+  get 'specialities/create'
   devise_for :teachers, path: 'teachers'
   devise_for :students, path: 'students'
   root to: 'pages#home'
