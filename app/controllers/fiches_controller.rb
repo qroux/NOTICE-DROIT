@@ -1,4 +1,5 @@
 class FichesController < ApplicationController
+  before_action :authenticate_student!, only: [:show]
 
   def show
   end
