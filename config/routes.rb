@@ -16,7 +16,8 @@ Rails.application.routes.draw do
   # get 'reviews/index'
   # get 'reviews/new'
   # get 'reviews/create'
-
+  get '/about', to: 'pages#about'
+  get '/abonnements', to: 'pages#abonnements'
 
   devise_for :teachers, path: 'teachers'
   devise_for :students, path: 'students'
