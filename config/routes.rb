@@ -1,30 +1,24 @@
 Rails.application.routes.draw do
-  get 'favorites/index'
-  get 'favorites/show'
-  get 'favorites/new'
-  get 'favorites/create'
-  get 'favorites/delete'
-  get 'reviews/index'
-  get 'reviews/new'
-  get 'reviews/create'
-  get 'fiches/index'
-  get 'fiches/show'
-  get 'fiches/new'
-  get 'fiches/create'
-  get 'fiches/edit'
-  get 'fiches/update'
-  get 'chapters/index'
-  get 'chapters/show'
-  get 'chapters/new'
-  get 'chapters/create'
-  get 'chapters/edit'
-  get 'chapters/update'
-  get 'specialities/index'
-  get 'specialities/show'
-  get 'specialities/new'
-  get 'specialities/create'
+  root to: 'pages#home'
+
+  resources :specialities, only: [:new, :create, :index, :show] do
+    resources :chapters, only: [:show, :new, :create, :update, :edit] do
+      resources :fiches, only: [:show, :new, :create, :update, :edit]
+    end
+  end
+  resources :favorites, only: [:index, :new, :create]
+
+  # vérifier les routes de reviews
+  # resources :reviews, only: [:index, :show, :new, :create]
+  # manque my_courses pour le prof
+
+
+  # get 'reviews/index'
+  # get 'reviews/new'
+  # get 'reviews/create'
+
+
   devise_for :teachers, path: 'teachers'
   devise_for :students, path: 'students'
-  root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
