@@ -1,2 +1,19 @@
 <h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+ <div class="home-container">
+    <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)50%), url('<%= image_path 'home_image.jpg', height: 300, width: 400, crop: :fill %>')">
+
+      <div class="banner-content">
+        <h1>Notice</h1>
+        <p>La solution qu'il vous faut pour réussir vos examens</p>
+        <%= form_tag specialities_show_path, method: :get do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Accédez à l'ensemble des fiches de révision de nos professeurs homologués en fonction de vos besoins "
+        %>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
