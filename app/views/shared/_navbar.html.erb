@@ -6,8 +6,6 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-     <%= link_to'Qui sommes-nous ?', about_path %>
-      <%= link_to'Nos abonnements', about_path %>
 
     <% if teacher_signed_in? %>
 
@@ -70,7 +68,10 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_student_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "Se connecter en tant qu'étudiant"), new_student_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "Se connecter en tant que professeur"), new_teacher_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to'Qui sommes-nous ?', about_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to'Nos abonnements', about_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 
