@@ -1,22 +1,54 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)50%), url('<%= image_path 'abonnements_image.jpg' %>')">
-
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)50%), url('<%= image_path 'abonnements_image2.jpg' %>')">
   <div class="banner-content">
     <h1>Notice</h1>
     <h2>Quel abonnement conviendra le plus à votre besoin ?</h2>
   </div>
 </div>
-
-<div class="container">
-    <h3>A propos</h3>
-    <p>Notice, un accès simple à des cours en lignes et fiches de révision préparés spécialement par nos professeurs experts. Maîtres de conférence et Chargés de TD mettent à votre disposition leurs connaissances pour maximiser vos chances de réussite à vos prochains examens.</p>
-    <br>
-<h4>Le service notice c'est :</h4>
-    <p>- Une équipe pédagogique expériementée de plus de 50 professeurs</p>
-    <p>- Des cours complets rédigés par nos experts</p>
-    <p>- Des fiches didactiques de révision qui reprennent les points clés à connaître pour l'examen</p>
-    <p>- Des flashcard accessibles partout pour vous entraîner et valider vos acquis</p>
+<div class="abonnements-tittle">
+  <h3>Une offre sur mesure qui s'adapte à vos révisions</h3>
 </div>
+<div class="offres">
 
- <div class="about-button">
-<%= link_to "Je m'abonne !", students_sign_up_path, class: "about-button" %>
+  <div class="item">
+      <h4><strong>Offre Solo</strong></h4>
+      <h5>Accès à 1 spécialité, cours et fiches</h5>
+    <div >
+      <%= image_tag 'solo.png', height: 150, width: 150, crop: :fill%>
+    </div>
+      <h4>6.50 €</h4>
+    <div class="margin-bottom">
+      <%= link_to "Je m'abonne à l'offre Solo", abonnements_path, class: "about-button" %>
+    </div>
+  </div>
+
+  <div class="item ">
+      <h4><strong>Offre Trio</strong></h4>
+      <h5>Accès à 3 spécialités, cours et fiches</h5>
+    <div >
+      <%= image_tag 'trio.png', height: 150, width: 150, crop: :fill%>
+    </div>
+      <h4>15 €</h4>
+    <div class="margin-bottom">
+      <%= link_to "Je m'abonne à l'offre Trio", abonnements_path, class: "about-button" %>
+    </div>
+  </div>
+
+
+  <div class="item ">
+      <h4><strong>Offre Mégalo</strong></h4>
+      <h5>Accès à toutes les spécialités, cours et fiches</h5>
+    <div >
+      <%= image_tag 'megalo.png', height: 150, width: 150, crop: :fill%>
+    </div>
+      <h4>30 €</h4>
+    <div class="margin-bottom">
+      <%= link_to "Je m'abonne à l'offre Mégalo", abonnements_path, class: "about-button" %>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <h3><strong>Un accès à toutes les ressources en ligne par spécialité pour réviser efficacement</strong></h3>
+  <h3>- Cours rédigés par chapitre</h3>
+  <h3>- Fiches de révison</h3>
+  <h3>- Flashcards associées</h3>
 </div>
