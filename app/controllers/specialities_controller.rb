@@ -1,27 +1,19 @@
 class SpecialitiesController < ApplicationController
   before_action :authenticate_teacher!, only: [:my_courses, :new, :create]
-  # vérfier si new et create sont nécessaire dans le before_action
-
-
-
+  # vérifier si new et create sont nécessaire dans le before_action
 
   def my_courses
     # if current_user.id == teacher.id
     #   @specialities = Specialty.select {|speciality| current_user.id == teacher.id}
   end
 
-
-
-
-
-
-
   def index
     @specialities = Speciality.where(params[:query])
   end
 
   def show
-    @specialities = Speciality.find(params[:id])
+    @speciality = Speciality.find(params[:id])
+    @chapters = Chapter.all
   end
 
   def new
@@ -30,8 +22,9 @@ class SpecialitiesController < ApplicationController
 
   def create
     @speciality = Speciality.new(speciality_params)
-    if speciality.save
-      redirect_to new_speciality_chapter_path
+    @speciality.teacher = current_teacher
+    if @speciality.save
+      redirect_to speciality_path(@speciality)
     else
       render :new
     end
