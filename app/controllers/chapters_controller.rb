@@ -6,12 +6,15 @@ class ChaptersController < ApplicationController
 
   def new
     @chapter = Chapter.new
+    @speciality = Speciality.find(params[:speciality_id])
   end
 
   def create
-    @chapter = chapter.new(chapter_params)
-    if chapter.save
-      redirect_to new_chapter_path
+    @speciality = Speciality.find(params[:speciality_id])
+    @chapter = Chapter.new(chapter_params)
+    @chapter.speciality = @speciality
+    if @chapter.save!
+      redirect_to my_courses_path
     else
       render :new
     end
@@ -21,5 +24,11 @@ class ChaptersController < ApplicationController
   end
 
   def update
+  end
+
+  private
+
+  def chapter_params
+    params.require(:chapter).permit(:title, :content)
   end
 end

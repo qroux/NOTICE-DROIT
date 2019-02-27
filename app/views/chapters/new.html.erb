@@ -1,0 +1,10 @@
+<h2>Ajouter un chapitre à la spécialité</h2>
+  <%= simple_form_for [@speciality, @chapter] do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :title, label: "Titre du chapitre"%>
+  <%= f.input :content, as: :file %>
+  <%= f.input :content_cache, as: :hidden %>
+  <%= f.button :submit %>
+  <% end %>
+
+
