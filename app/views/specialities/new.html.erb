@@ -1,2 +1,7 @@
-<h1>Specialities#new</h1>
-<p>Find me in app/views/specialities/new.html.erb</p>
+<h1>Quelle est votre spécialité</h1>
+
+<%= simple_form_for @speciality do |f| %>
+<%= f.error_notification %>
+<%= f.input :title, label: "Nom de la spécialité"%>
+<%= f.button :submit %>
+<% end %>

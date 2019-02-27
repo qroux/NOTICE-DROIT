@@ -1,2 +1,21 @@
 <h1>Show de specialities</h1>
+  <%= @speciality.title %>
+
+<h2>Ajouter un chapitre à la spécialité</h2>
+  <%= simple_form_for [@speciality, @chapter] do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :title, label: "Nom de la spécialité"%>
+  <%= f.button :submit %>
+  <% end %>
+
+
+
+
+
+
 <h1>+index de chapter</h1>
+<ul>
+  <% @chapters.each do |chapter|%>
+    <li><%= chapter.title %></li>
+  <% end %>
+</ul>
