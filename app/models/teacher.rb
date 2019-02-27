@@ -3,8 +3,7 @@ class Teacher < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :specialities
-  has_many :fiches
-  # has_many :fiches
-  # has_many :chapters trought: :speciali
+  has_many :specialities, dependent: :destroy
+  has_many :chapters, through: :specialities, dependent: :destroy
+  has_many :fiches, through: :chapters, dependent: :destroy
 end

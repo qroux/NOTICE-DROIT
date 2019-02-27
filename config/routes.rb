@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   end
   resources :favorites, only: [:index, :new, :create]
 
+  get '/my_courses', to: 'specialities#my_courses'
+
   # vérifier les routes de reviews
   # resources :reviews, only: [:index, :show, :new, :create]
   # manque my_courses pour le prof
@@ -16,7 +18,8 @@ Rails.application.routes.draw do
   # get 'reviews/index'
   # get 'reviews/new'
   # get 'reviews/create'
-
+  get '/about', to: 'pages#about'
+  get '/abonnements', to: 'pages#abonnements'
 
   devise_for :teachers, path: 'teachers'
   devise_for :students, path: 'students'
