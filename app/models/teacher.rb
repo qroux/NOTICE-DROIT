@@ -4,6 +4,6 @@ class Teacher < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :specialities, dependent: :destroy
-  has_many :chapters, through: :specialities, dependent: :destroy
-  has_many :fiches, through: :chapters, dependent: :destroy
+  #has_many :chapters, through: :specialities, dependent: :destroy
+  #has_many :fiches, through: :chapters, dependent: :destroy
 end

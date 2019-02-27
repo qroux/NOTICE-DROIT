@@ -1,5 +1,4 @@
 class Fiche < ApplicationRecord
-  belongs_to :teacher
   belongs_to :chapter
 
   has_many :reviews, dependent: :destroy
