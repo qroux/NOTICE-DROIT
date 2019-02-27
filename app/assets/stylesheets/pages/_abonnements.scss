@@ -1,0 +1,44 @@
+
+
+.abonnements-tittle {
+padding: 20px;
+text-align: center;
+}
+
+.margin-bottom {
+  margin-bottom: 20px;
+}
+
+.offres {
+display: flex;
+justify-content: space-around;
+flex-flow: wrap;
+}
+
+.item {
+display: flex;
+justify-content: space-around;
+flex-direction: column;
+padding-left: 25px;
+padding-right: 25px;
+text-align: center;
+min-height: 500px;
+max-width: 450px;
+border: 1px solid #ddd;
+background: #fff;
+margin-bottom: 20px;
+
+h4{
+font-size: 40px;
+  }
+
+  h5{
+font-size: 30px;
+  }
+}
+
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
