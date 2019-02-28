@@ -28,13 +28,22 @@
   justify-content: space-between;
   align-items: baseline;
   margin: 60px 60px;
+
 }
 
 .cours{
+  background: #fff;
+  border: 1px solid #ddd;
+// padding-left: 25px;
+//   padding-right: 30px;
+ height: 380px;
+//   width: 350px;
 
-  margin: 0 60px;
+  margin: 30px 0;
   padding: 50px 40px;
+
 }
+
 
 
 .icon{
@@ -49,8 +58,10 @@
   align-content: center;
 
   p{
-    font-size: 14px;
+    font-size: 16px;
     text-align:center;
+     padding: 20px;
+     margin: 0px -34px 11.5px;
   }
 
   h4{

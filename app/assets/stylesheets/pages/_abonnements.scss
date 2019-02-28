@@ -20,7 +20,7 @@ flex-flow: wrap;
   padding-left: 25px;
   padding-right: 25px;
   text-align: center;
-  min-height: 450px;
+  min-height: 400px;
   max-width: 400px;
   border: 1px solid #ddd;
   background: #fff;
@@ -33,9 +33,4 @@ flex-flow: wrap;
     }
 }
 
-.container {
-  // modifier le style d'une classe boostrap c'est le mal
-  padding: 20px;
-  text-align: center;
-}
 
