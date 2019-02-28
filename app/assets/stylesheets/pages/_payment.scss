@@ -1,0 +1,44 @@
+.row-payment{
+  padding: 20px, 20px;
+}
+
+.card_number{
+  margin: 20px, 20px;
+}
+
+.name{
+  margin: 20px, 20px;
+}
+
+body { margin-top:20px; }
+
+.form-payment{
+  h1{
+    font-size: 30px;
+    margin-bottom: 40px;
+    font-weight: bolder;
+  }
+}
+
+.credit-card-box .panel-title {
+    display: inline;
+    font-weight: bold;
+}
+.credit-card-box label {
+    display: block;
+}
+
+.credit-card-box .display-tr {
+    display: table-row;
+}
+.credit-card-box .display-td {
+    display: table-cell;
+    vertical-align: middle;
+    width: 50%;
+}
+
+.credit-card-box .panel-heading img {
+    min-width: 180px;
+}
+
+

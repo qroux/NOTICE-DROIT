@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'payments/create', to: 'payments#create'
+  get 'payments/new', to: 'payments#new'
   root to: 'pages#home'
 
   resources :specialities, only: [:new, :create, :index, :show] do
