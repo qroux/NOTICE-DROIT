@@ -5,4 +5,6 @@ class Student < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :reviews, dependent: :destroy
   has_many :favorites, dependent: :destroy
+
+  mount_uploader :avatar, PhotoUploader
 end

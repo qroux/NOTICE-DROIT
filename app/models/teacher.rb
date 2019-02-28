@@ -6,4 +6,5 @@ class Teacher < ApplicationRecord
   has_many :specialities, dependent: :destroy
   #has_many :chapters, through: :specialities, dependent: :destroy
   #has_many :fiches, through: :chapters, dependent: :destroy
+  mount_uploader :avatar, PhotoUploader
 end
