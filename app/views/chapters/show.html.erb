@@ -1,7 +1,7 @@
 <div class="container">
-  <h1><%= @chapter.title %></h1>
-  <h3>AFFICHAGE DU PDF DE COURS</h3>
-  <h3><%= @chapter.id %></h3>
+  <h1><%= @chapter.speciality.title %></h1>
+
+  <h3><%= @chapter.title %></h3>
   <iframe src="https://docs.google.com/viewer?url=<%= @chapter.content %>&embedded=true"
   style="width:1000px; height:500px;" frameborder="0"></iframe>
   <!-- changer l'url du pdf par la string stockée en local pour @chapter.content ou addcolumn dans la table chapters pour stocker l'url -->
