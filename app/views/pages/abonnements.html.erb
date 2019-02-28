@@ -1,7 +1,7 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)50%), url('<%= image_path 'abonnements_image2.jpg' %>')">
   <div class="banner-content">
     <h1>Notice</h1>
-    <h2>Quel abonnement conviendra le plus à votre besoin ?</h2>
+    <h3>Quel abonnement conviendra le plus à votre besoin ?</h3>
   </div>
 </div>
 <div class="abonnements-tittle">
@@ -15,7 +15,7 @@
     <div >
       <%= image_tag 'solo.png', height: 150, width: 150, crop: :fill%>
     </div>
-      <h4>6.50 €</h4>
+      <h4><strong>6.50 €</strong></h4>
     <div class="margin-bottom">
       <%= link_to "Je m'abonne à l'offre Solo", payments_new_path, class: "about-button" %>
     </div>
@@ -27,7 +27,7 @@
     <div >
       <%= image_tag 'trio.png', height: 150, width: 150, crop: :fill%>
     </div>
-      <h4>15 €</h4>
+      <h4><strong>15 €</strong></h4>
     <div class="margin-bottom">
       <%= link_to "Je m'abonne à l'offre Trio", abonnements_path, class: "about-button" %>
     </div>
@@ -46,9 +46,13 @@
     </div>
   </div>
 </div>
-<div class="container">
-  <h3><strong>Un accès à toutes les ressources en ligne par spécialité pour réviser efficacement</strong></h3>
-  <h3>- Cours rédigés par chapitre</h3>
-  <h3>- Fiches de révison</h3>
-  <h3>- Flashcards associées</h3>
+<div class="a-propos">
+  <div class="title">
+  <h4>Un accès à toutes les ressources en ligne par spécialité pour réviser efficacement : </h4>
+  </div>
+  <ul>
+  <li>cours rédigés par chapitre,</li>
+  <li>fiches de révison,</li>
+  <li>flashcards associées.</li>
+  </ul>
 </div>
