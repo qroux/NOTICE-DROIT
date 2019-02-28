@@ -12,3 +12,26 @@
     color: white;
     text-decoration: none;
     }
+
+.payment-button {
+color: white;
+    background-color: #ed5360;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 7px 10px;
+    a{
+      color: white;
+      font-size: 20px;
+    }
+
+}
+.payment-button:hover {
+    background-color: #E14452;
+    color: white;
+    text-decoration: none;
+     a{
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+    }
+    }
