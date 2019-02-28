@@ -1,0 +1,90 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="form-payment">
+        <h1>Formulaire de Paiement</h1>
+        <div class="panel panel-default credit-card-box">
+          <div class="panel-heading display-table" >
+            <div class="row display-tr" >
+              <h3 class="panel-title display-td">Détails de Paiement</h3>
+              <div class="display-td" >
+                <img class="img-responsive pull-right" src="https://i76.imgup.net/accepted_c22e0.png">
+              </div>
+            </div>
+          </div>
+          <div class="panel-body">
+            <form role="form" id="payment-form" method="POST" action="">
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="form-group">
+                    <label for="cardNumber">Numéro de Carte</label>
+                    <div class="input-group">
+
+                      <input type="card_number" class="form-control", id= "cardNumber", placeholder="Numéro de Carte">
+                      <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="form-group">
+                    <label for="name">Titulaire de la Carte</label>
+
+
+                      <input type="card_number" class="form-control", id= "name", placeholder="Nom">
+
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-7 col-md-7">
+                  <div class="form-group">
+                    <label for="cardExpiry">Date d'expiration</label>
+                    <input type="Expiration" class="form-control", id= "cardExpiry", placeholder="MM/YY">
+
+                  </div>
+                </div>
+                <div class="col-xs-5 col-md-5 pull-right">
+                  <div class="form-group">
+                    <label for="cardCVC">Cryptogramme</label>
+                    <input type="Expiration" class="form-control", id= "cardCVC", placeholder="Code CVV">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <button class="pay btn btn-success btn-lg btn-block" type="button">Payer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!--      <form action="/favorites" method="post">
+<div class="row-payment">
+  <div class="col-xs-6">
+    <div class="card_number">
+      <input type="card_number", placeholder="Numéro de Carte">
+    </div>
+  </div>
+  <div class="col-xs-6">
+    <input type="name", placeholder="Votre nom">
+  </div>
+  <div class="col-xs-6">
+    <input type="code", placeholder="CVV code">
+  </div>
+  <div class="col-xs-6">
+    <input type="expiration_date", placeholder="Date d'expiration">
+  </div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
