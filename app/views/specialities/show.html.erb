@@ -1,8 +1,24 @@
 <h1><%= @speciality.title %></h1>
-
-
-  <ul>  <% @speciality.chapters.each do |chapter| %>
-      <li><%= chapter.title %></li>
+  <ul>
+    <% @speciality.chapters.each do |chapter| %>
+      <li>
+        <% if current_teacher.nil? %>
+          <%= link_to chapter.title, speciality_chapter_path(chapter) %>
+        <% else %>
+          <%= chapter.title %>
+        <% end %>
+      </li>
+      <ul>
+        <% chapter.fiches.each do |fiche| %>
+          <li>
+            <% if current_teacher.nil? %>
+              <%= link_to fiche.title, speciality_chapter_fich_path(chapter, fiche) %>
+            <% else %>
+              <%= fiche.title %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
     <% end %>
   </ul>
 
