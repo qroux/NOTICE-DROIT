@@ -41,4 +41,38 @@ body { margin-top:20px; }
     min-width: 180px;
 }
 
+.payment-offres {
+display: flex;
+justify-content: space-around;
+flex-flow: wrap;
+}
+
+.payment-item {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  padding-left: 25px;
+  padding-right: 25px;
+  text-align: center;
+  min-height: 400px;
+  max-width: 370px;
+  border: 1px solid #ddd;
+  background: #fff;
+  margin-bottom: 20px;
+
+    ul {
+    text-align: left;
+    }
+
+    .payment-item-title {
+      color: #E14452;
+    }
+
+    .price-item {
+color: #53BDB2;
+font-size: 25px;
+}
+}
+
+
 
