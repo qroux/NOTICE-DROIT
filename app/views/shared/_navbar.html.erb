@@ -1,81 +1,115 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "book-stack-logo.png", height: 50 %>
+  <%= image_tag "book-stack-logo.png", height: 50 %>
   <% end %>
-
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <%= link_to'Qui sommes-nous ?', about_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
+    <%= link_to'Nos abonnements', abonnements_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% if teacher_signed_in? %>
-
-      <!-- Avatar with dropdown menu -->
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-           <li>
-              <%= link_to edit_teacher_registration_path do %>
-                 <i class="fa fa-cog"></i> Modifier mon profil
-              <% end %>
-            </li>
-            <li>
-              <%= link_to my_courses_path do %>
-                <i class="fas fa-book"></i> Mes cours
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_student_session_path, method: :delete do %>
-                <i class="fas fa-sign-out-alt"></i> Se déconnecter
-              <% end %>
-            </li>
-          </ul>
-        </div>
+    <!-- Avatar with dropdown menu -->
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+        <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li>
+            <%= link_to edit_teacher_registration_path do %>
+            <i class="fa fa-cog"></i> Modifier mon profil
+            <% end %>
+          </li>
+          <li>
+            <%= link_to my_courses_path do %>
+            <i class="fas fa-book"></i> Mes cours
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_student_session_path, method: :delete do %>
+            <i class="fas fa-sign-out-alt"></i> Se déconnecter
+            <% end %>
+          </li>
+        </ul>
       </div>
+    </div>
     <% elsif student_signed_in? %>
-      <!-- Avatar with dropdown menu -->
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to edit_student_registration_path do %>
-                 <i class="fa fa-cog"></i> Modifier mon profil
-              <% end %>
-            </li>
-            <li>
-              <%= link_to favorites_path do %>
-                <i class="fas fa-bookmark"></i> Mes favoris
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_student_session_path, method: :delete do %>
-                <i class="fas fa-sign-out-alt"></i> Se déconnecter
-              <% end %>
-            </li>
-          </ul>
-        </div>
+    <!-- Avatar with dropdown menu -->
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+        <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li>
+            <%= link_to edit_student_registration_path do %>
+            <i class="fa fa-cog"></i> Modifier mon profil
+            <% end %>
+          </li>
+          <li>
+            <%= link_to favorites_path do %>
+            <i class="fas fa-bookmark"></i> Mes favoris
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_student_session_path, method: :delete do %>
+            <i class="fas fa-sign-out-alt"></i> Se déconnecter
+            <% end %>
+          </li>
+        </ul>
       </div>
+    </div>
     <% else %>
-      <!-- Login link (when logged out) -->
-      <%= link_to'Nos abonnements', abonnements_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to t(".sign_in", default: "Se connecter en tant qu'étudiant"), new_student_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to t(".sign_in", default: "Se connecter en tant que professeur"), new_teacher_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
+    <!-- Login link (when logged out) -->
+    <%= link_to t(".sign_in", default: "Se connecter en tant qu'étudiant"), new_student_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to t(".sign_in", default: "Se connecter en tant que professeur"), new_teacher_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
-
   <!-- Dropdown list appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <li><%= link_to'Qui sommes-nous ?', about_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li> <%= link_to'Nos abonnements', abonnements_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <% if teacher_signed_in? %>
+
+          <li>
+            <%= link_to edit_teacher_registration_path do %>
+            <i class="fa fa-cog"></i> Modifier mon profil
+            <% end %>
+          </li>
+          <li>
+            <%= link_to my_courses_path do %>
+            <i class="fas fa-book"></i> Mes cours
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_student_session_path, method: :delete do %>
+            <i class="fas fa-sign-out-alt"></i> Se déconnecter
+            <% end %>
+          </li>
+        </ul>
+        <% elsif student_signed_in? %>
+
+          <li>
+            <%= link_to edit_student_registration_path do %>
+            <i class="fa fa-cog"></i> Modifier mon profil
+            <% end %>
+          </li>
+          <li>
+            <%= link_to favorites_path do %>
+            <i class="fas fa-bookmark"></i> Mes favoris
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_student_session_path, method: :delete do %>
+            <i class="fas fa-sign-out-alt"></i> Se déconnecter
+            <% end %>
+          </li>
+        </ul>
+        <% else %>
+
+        <li><%= link_to t(".sign_in", default: "Se connecter en tant qu'étudiant"), new_student_session_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to t(".sign_in", default: "Se connecter en tant que professeur"), new_teacher_session_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <% end %>
       </ul>
     </div>
   </div>
 </div>
-
