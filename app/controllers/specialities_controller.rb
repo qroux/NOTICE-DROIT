@@ -3,12 +3,30 @@ class SpecialitiesController < ApplicationController
   # vérifier si new et create sont nécessaire dans le before_action
 
   def my_courses
-    # if current_user.id == teacher.id
-    #   @specialities = Specialty.select {|speciality| current_user.id == teacher.id}
+
+    if current_user.id == current_teacher.id
+      @specialities = current_teacher.specialities
+
+      @chapters = []
+      @specialities.each do |speciality|
+        @chapters << speciality.chapters
+      end
+
+      @fiches = []
+      @chapters.each do |speciality_chapters|
+        speciality_chapters.each do |chapter|
+          @fiches << chapter.fiches
+        end
+      end
+    end
   end
 
   def index
-    @specialities = Speciality.where(params[:query])
+    if params[:query].present?
+      @specialities = Speciality.where("title ILIKE ?", params[:query])
+    else
+      @specialities = Speciality.all
+    end
   end
 
   def show

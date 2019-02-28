@@ -1,9 +1,9 @@
-<h1>Show de specialities</h1>
-  <%= @speciality.title %>
+<h1><%= @speciality.title %></h1>
 
-<h1>+index de chapter</h1>
-<ul>
-  <% @chapters.each do |chapter|%>
-    <li><%= chapter.title %></li>
-  <% end %>
-</ul>
+
+  <ul>  <% @speciality.chapters.each do |chapter| %>
+      <li><%= chapter.title %></li>
+    <% end %>
+  </ul>
+
+

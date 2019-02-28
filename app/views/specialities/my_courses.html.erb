@@ -1,1 +1,18 @@
 <h1>MES COURS (PROF)</h1>
+
+<% @specialities.each do |speciality| %>
+<%= speciality.title %>
+<% end %>
+
+<% @chapters.each do |chapter| %>
+  <% chapter.each do |c| %>
+    <%=  c.title %>
+  <% end %>
+<% end %>
+
+<% @fiches.each do |chapter| %>
+  <% chapter.each do |fiche| %>
+      <%= fiche.title %>
+  <% end %>
+<% end %>
+
