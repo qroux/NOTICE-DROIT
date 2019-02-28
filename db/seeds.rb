@@ -21,5 +21,5 @@ Student.create!(email: "quentin@gmail.com", password: "azerty123", first_name: "
 Speciality.create!(title: "Droit des sociétés", status: "en cours", tag: "Droit des biens", teacher: Teacher.all.sample)
 Speciality.create!(title: "Droit des biens", status: "en ligne", tag: "Droit des régimes matrimonieux", teacher: Teacher.all.sample)
 
-Chapter.create!(title: "Le capital social", content: "Le capital social est un élément obligatoire pour toutes les sociétés. Il est constitué d’apports en numéraire et/ou d’apports en nature. Le montant du capital social d’une société doit obligatoirement figurer dans les statuts. Le capital social est divisé en titres (actions ou parts sociales suivant la forme juridique de la société) répartis entre les associés et les actionnaires. Le capital social initial d’une société n’est pas intangible, il peut ensuite être modifié par voie d’augmentation ou de réduction de capital.", speciality: Speciality.all.sample)
-Chapter.create!(title: "La propriété", content:"La propriété est la « possession » d'un bien meuble ou immeuble ou d'une production intellectuelle, reconnue et consacrée par une autorité, la société, la loi, la raison générale ou le consentement universel, etc.", speciality: Speciality.all.sample)
+Chapter.create!(title: "Le capital social", speciality: Speciality.all.sample)
+Chapter.create!(title: "La propriété", speciality: Speciality.all.sample)

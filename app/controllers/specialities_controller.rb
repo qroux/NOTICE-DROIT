@@ -24,7 +24,7 @@ class SpecialitiesController < ApplicationController
     @speciality = Speciality.new(speciality_params)
     @speciality.teacher = current_teacher
     if @speciality.save
-      redirect_to speciality_path(@speciality)
+      redirect_to new_speciality_chapter_path(@speciality)
     else
       render :new
     end
