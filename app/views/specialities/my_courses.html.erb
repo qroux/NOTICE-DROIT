@@ -1,18 +1,22 @@
 <h1>MES COURS (PROF)</h1>
 
-<% @specialities.each do |speciality| %>
-<%= speciality.title %>
-<% end %>
-
-<% @chapters.each do |chapter| %>
-  <% chapter.each do |c| %>
-    <%=  c.title %>
+<ul>
+  <% @specialities.each do |speciality| %>
+    <li> <%= speciality.title %></li>
+    <ul> <%= link_to "+ ajouter un chapitre", new_speciality_chapter_path(speciality) %>
+      <% speciality.chapters.each do |chapter|%>
+        <li><%= chapter.title %> </li>
+        <ul>
+          <% chapter.fiches.each do |fiche| %>
+            <li><%= fiche.title  %></li>
+          <% end %>
+          <%= link_to "+ ajouter une fiche", new_speciality_chapter_fich_path(speciality, chapter) %>
+        </ul>
+      <% end %>
+    </ul>
   <% end %>
-<% end %>
+</ul>
 
-<% @fiches.each do |chapter| %>
-  <% chapter.each do |fiche| %>
-      <%= fiche.title %>
-  <% end %>
-<% end %>
+
+
 

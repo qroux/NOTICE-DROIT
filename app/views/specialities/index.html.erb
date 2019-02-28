@@ -4,9 +4,17 @@
 
 <ul>
   <% @specialities.each do |speciality|%>
-    <li><%= speciality.title %></li>
+    <li>
+        <%= link_to speciality.title, speciality_path(speciality) %>
+    </li>
   <% end %>
 </ul>
+
+
+<% if current_teacher.nil? %>
+<% else %>
+  <%= link_to "Ajouter une spécialité", new_speciality_path %>
+<% end %>
 
 
 
