@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_26_164214) do
+ActiveRecord::Schema.define(version: 2019_03_01_110116) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,15 +24,6 @@ ActiveRecord::Schema.define(version: 2019_02_26_164214) do
     t.index ["speciality_id"], name: "index_chapters_on_speciality_id"
   end
 
-  create_table "favorites", force: :cascade do |t|
-    t.bigint "student_id"
-    t.bigint "fiche_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["fiche_id"], name: "index_favorites_on_fiche_id"
-    t.index ["student_id"], name: "index_favorites_on_student_id"
-  end
-
   create_table "fiches", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -40,6 +31,17 @@ ActiveRecord::Schema.define(version: 2019_02_26_164214) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["chapter_id"], name: "index_fiches_on_chapter_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "status"
+    t.jsonb "payment"
+    t.bigint "student_id"
+    t.bigint "speciality_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["speciality_id"], name: "index_orders_on_speciality_id"
+    t.index ["student_id"], name: "index_orders_on_student_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -61,6 +63,7 @@ ActiveRecord::Schema.define(version: 2019_02_26_164214) do
     t.bigint "teacher_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price_cents", default: 0, null: false
     t.index ["teacher_id"], name: "index_specialities_on_teacher_id"
   end
 
@@ -97,9 +100,9 @@ ActiveRecord::Schema.define(version: 2019_02_26_164214) do
   end
 
   add_foreign_key "chapters", "specialities"
-  add_foreign_key "favorites", "fiches", column: "fiche_id"
-  add_foreign_key "favorites", "students"
   add_foreign_key "fiches", "chapters"
+  add_foreign_key "orders", "specialities"
+  add_foreign_key "orders", "students"
   add_foreign_key "reviews", "fiches", column: "fiche_id"
   add_foreign_key "reviews", "students"
   add_foreign_key "specialities", "teachers"

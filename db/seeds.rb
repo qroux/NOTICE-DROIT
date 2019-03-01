@@ -18,8 +18,8 @@ Teacher.create!(email: "louise@gmail.com", password: "azerty123", first_name: "l
 Student.create!(email: "milena@gmail.com", password: "azerty123", first_name: "milena", last_name: "gaigne" )
 Student.create!(email: "quentin@gmail.com", password: "azerty123", first_name: "quentin", last_name: "roux")
 
-Speciality.create!(title: "Droit des sociétés", status: "en cours", tag: "Droit des biens", teacher: Teacher.all.sample)
-Speciality.create!(title: "Droit des biens", status: "en ligne", tag: "Droit des régimes matrimonieux", teacher: Teacher.all.sample)
+Speciality.create!(title: "Droit des sociétés", status: "en cours", tag: "Droit des biens", teacher: Teacher.all.sample, price: 650)
+Speciality.create!(title: "Droit des biens", status: "en ligne", tag: "Droit des régimes matrimonieux", teacher: Teacher.all.sample,  price: 650)
 
 Chapter.create!(title: "Le capital social", speciality: Speciality.all.sample)
 Chapter.create!(title: "La propriété", speciality: Speciality.all.sample)
