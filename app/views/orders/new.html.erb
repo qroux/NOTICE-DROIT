@@ -1,2 +1,11 @@
-<h1>Orders#new</h1>
-<p>Find me in app/views/orders/new.html.erb</p>
+<h1>Mes achats</h1>
+
+
+<p>Spécialité : <%= @order.speciality.title  %> -  prix: <%=@order.speciality.price  %></p>
+
+
+
+
+<%= link_to "confirmer", payments_new_path, class: "about-button" %>
+
+

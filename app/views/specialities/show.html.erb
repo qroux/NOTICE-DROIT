@@ -1,4 +1,8 @@
 <h1><%= @speciality.title %></h1>
+<%= link_to 'acheter', orders_new_path(speciality_id: @speciality.id), class: "btn btn-success pull-right" %>
+
+<!-- , speciality :query, params[:query] -->
+
   <ul>
     <% @speciality.chapters.each do |chapter| %>
       <li>
