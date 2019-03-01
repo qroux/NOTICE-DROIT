@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'orders/index'
+  get 'orders/new'
+  get 'orders/create'
   get 'payments/create', to: 'payments#create'
   get 'payments/new', to: 'payments#new'
   root to: 'pages#home'
@@ -8,7 +11,7 @@ Rails.application.routes.draw do
       resources :fiches, only: [:show, :new, :create, :update, :edit]
     end
   end
-  resources :favorites, only: [:index, :new, :create]
+  resources :orders, only: [:index, :new, :create]
 
   get '/my_courses', to: 'specialities#my_courses'
 
