@@ -6,7 +6,7 @@
       <h3>La solution qu'il vous faut pour réussir vos examens</h3>
       <br>
       <br>
-      <p>Accédez à l'ensemble des fiches de révision</p>
+      <p>Accédez à la spécialité que vous recherchez</p>
       <%= form_tag specialities_path, method: :get do %>
       <%= text_field_tag :query,
       params[:query],
@@ -14,7 +14,7 @@
       placeholder: "Droit de la propriété"
       %>
       <% end %>
-
+    <%= link_to "L'ensemble des spécialités", specialities_path %>
 
     </div>
   </div>

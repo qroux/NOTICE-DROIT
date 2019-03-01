@@ -26,7 +26,6 @@ class SpecialitiesController < ApplicationController
     else
       @specialities = Speciality.all
     end
-
   end
 
   def show
