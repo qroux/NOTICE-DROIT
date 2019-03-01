@@ -1,21 +1,23 @@
-<h1>Specialities#index</h1>
-<p>Find me in app/views/specialities/index.html.erb</p>
-
-
 <ul>
   <% @specialities.each do |speciality|%>
     <li>
-        <%= link_to speciality.title, speciality_path(speciality) %>
+      <% if current_teacher.nil? %>
+        <h1> <%= link_to speciality.title, speciality_path(speciality) %> </h1>
+      <% else %>
+        <h1> <%= speciality.title %></h1>
+      <% end %>
     </li>
+
+    <% speciality.chapters.each do |chapter| %>
+      <li>
+        <%= chapter.title %>
+      </li>
+      <%= chapter.fiches.length %> fiches
+    <% end %>
   <% end %>
 </ul>
-
 
 <% if current_teacher.nil? %>
 <% else %>
   <%= link_to "Ajouter une spécialité", new_speciality_path %>
 <% end %>
-
-
-
-
