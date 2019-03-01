@@ -1,5 +1,5 @@
 <div class="home-container">
-  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)50%), url('<%= image_path 'home_image2.jpg' %>')">
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)50%), url('<%= image_path 'index_image.jpg' %>')">
     <div class="banner-content">
       <h1>Notice</h1>
       <h3>La solution qu'il vous faut pour réussir vos examens</h3>
@@ -20,27 +20,69 @@
 
 
 
-
-<ul>
+<div class = "card-container">
   <% @specialities.each do |speciality|%>
-    <li>
-      <% if current_teacher.nil? %>
-        <h1> <%= link_to speciality.title, speciality_path(speciality) %> </h1>
-      <% else %>
-        <h1> <%= speciality.title %></h1>
-      <% end %>
-    </li>
+    <div class = "card">
+      <div class="card-header">
+        <div class="card-author">
+            <h3>
+              <%= cl_image_tag speciality.teacher.avatar, height: 300, width: 340, crop: :fill, gravity: :face, :class => "avatar" %>
+              <%= speciality.teacher.pseudo %>
+            </h3>
+        </div>
+      </div>
 
-    <% speciality.chapters.each do |chapter| %>
-      <li>
-        <%= chapter.title %>
-      </li>
-      <%= chapter.fiches.length %> fiches
-    <% end %>
+      <div class="card-body">
+        <div class="card-speciality_title">
+          <% if current_teacher.nil? %>
+            <h1>
+              <%= link_to speciality.title, speciality_path(speciality) %>
+            </h1>
+          <% else %>
+              <h1>
+                <%= speciality.title %>
+              </h1>
+          <% end %>
+        </div>
+
+        <div class ="card-chapters_fiches">
+          <% speciality.chapters.each do |chapter| %>
+          <div class="card-row">
+            <div class="card-chapters">
+              <p><%= chapter.title %></p>
+            </div>
+
+            <div class="card-fiches">
+              <p><%= chapter.fiches.length %> fiches</p>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="card-footer">
+        <p>
+          Mise à jour le <%=  speciality.updated_at.strftime("%d-%m-%Y")%>
+        </p>
+        <div class="published-date">
+        </div>
+
+        <div class="review">
+        </div>
+
+        <div class= "ranking">
+        </div>
+      </div>
+    </div>
   <% end %>
-</ul>
+
+
+
+
+</div>
+
+
 
 <% if current_teacher.nil? %>
-<% else %>
-  <%= link_to "Ajouter une spécialité", new_speciality_path %>
-<% end %>
+    <% else %>
+      <%= link_to "Ajouter une spécialité", new_speciality_path %>
+    <% end %>
