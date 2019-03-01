@@ -46,24 +46,38 @@
         </div>
 
         <div class ="card-chapters_fiches">
+          <% counter = 0 %>
           <% speciality.chapters.each do |chapter| %>
           <div class="card-row">
             <div class="card-chapters">
-              <p><%= chapter.title %></p>
+              <p>
+                <b>Chapitre <%= counter += 1 %>. </b>
+                <%= chapter.title %>
+              </p>
             </div>
 
             <div class="card-fiches">
-              <p><%= chapter.fiches.length %> fiches</p>
+              <% if chapter.fiches.length <= 1 %>
+                <p><%= chapter.fiches.length %> fiche</p>
+              <% else %>
+                <%= chapter.fiches.length %> fiches
+              <% end %>
             </div>
           </div>
           <% end %>
         </div>
       </div>
       <div class="card-footer">
-        <p>
-          Mise à jour le <%=  speciality.updated_at.strftime("%d-%m-%Y")%>
-        </p>
         <div class="published-date">
+          <p>
+            <i class="far fa-check-circle"></i>
+            <% if (Time.now - speciality.updated_at).to_i/24/60/60 == 1 %>    Mise à jour il y à <%= (Time.now - speciality.updated_at).to_i/24/60/60 %> jour
+             <% elsif ((Time.now - speciality.updated_at).to_i/24/60/60) > 1 %>
+              Mise à jour il y à <%= (Time.now - speciality.updated_at).to_i/24/60/60 %> jours
+              <% elsif %>
+               Crée aujourd'hui
+             <% end %>
+          </p>
         </div>
 
         <div class="review">
