@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       resources :fiches, only: [:show, :new, :create, :update, :edit]
     end
   end
-  resources :orders, only: [:index, :new, :create]
+
 
   get '/my_courses', to: 'specialities#my_courses'
 
