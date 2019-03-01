@@ -3,7 +3,6 @@ class SpecialitiesController < ApplicationController
   # vérifier si new et create sont nécessaire dans le before_action
 
   def my_courses
-
     if current_user.id == current_teacher.id
       @specialities = current_teacher.specialities
 
