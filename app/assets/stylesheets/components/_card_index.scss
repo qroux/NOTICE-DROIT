@@ -3,9 +3,9 @@
   border-radius: 5px;
   box-shadow: hsla(0, 0, 0, .2) 0 4px 2px -2px;
   margin: 43px auto;
-  width: 29rem;
+  width: 35rem;
   @media screen and (min-width: 480px) {
-    width: 32rem;
+    width: 55rem;
   }
   @media screen and (min-width: 767px) {
     width: 63rem;
@@ -82,9 +82,9 @@
 }
 
 .card-fiches {
-  border: 1px solid lighten(#333, 40%);
+  border: 1px solid #5eddd2;
   border-radius: 3px;
-  color: lighten(#333, 40%);
+  color: #5eddd2;
   font-size: .75rem;
   height: 1.5rem;
   line-height: 1.5rem;
@@ -105,7 +105,8 @@
 }
 
 .card-footer p {
-    padding-left: 75%;
+    padding-left: 72%;
     font-size: 13px;
+    font-weight: lighter;
     color: lighten(#333, 45%);
   }
