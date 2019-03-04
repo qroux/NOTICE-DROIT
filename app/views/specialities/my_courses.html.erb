@@ -23,7 +23,7 @@
               <% chapter.fiches.each do |fiche| %>
               <h3><%= fiche.title  %></h3>
               <div class="dashboard-edit-fiche">
-                <p> <%= link_to "+ éditer la fiche", new_speciality_chapter_fich_path(speciality, chapter) %>
+                <p> <%= link_to "+ éditer la fiche", edit_speciality_chapter_fich_path(fiche.chapter.speciality.id, fiche.chapter.id, fiche) %>
                 </p>
               </div>
               <% end %>
