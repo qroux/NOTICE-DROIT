@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_student!, only: [:new, :create]
   # def index
   #   @orders = Order.all
   # end
@@ -13,6 +14,9 @@ class OrdersController < ApplicationController
                                   :speciality_id => params[:speciality_id]
                                 }
                                 # appeller sous forme de string
+    @speciality = Speciality.find(params[:speciality_id])
+    @orders = @speciality.orders
+    @my_order = @orders.where(student_id: current_student.id)
   end
 
   def create
