@@ -1,33 +1,68 @@
-<h1><%= @speciality.title %></h1>
+<div class = "card-container">
+  <div class="card">
+    <div class="card-header">
+      <div class="card-author">
+        <h3>
+          <%= cl_image_tag @speciality.teacher.avatar, height: 300, width: 340, crop: :fill, gravity: :face, :class => "avatar" %>
+          <%= @speciality.teacher.pseudo %>
+        </h3>
+        <%= link_to 'acheter', orders_new_path(speciality_id: @speciality.id), class: "btn btn-success pull-right" %>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-speciality_title">
+        <h1><%= @speciality.title %></h1>
+      </div>
 
-<% if @order.present? %>
-<%= link_to 'déjà acheté', orders_new_path(speciality_id: @speciality.id), class: "btn btn-primary pull-right disabled" %>
-<% else %>
-<%= link_to 'acheter', orders_new_path(speciality_id: @speciality.id), class: "btn btn-success pull-right" %>
-<% end %>
-<!-- , speciality :query, params[:query] -->
+      <div class ="card-chapters_fiches">
+        <% @speciality.chapters.each do |chapter| %>
+          <div class="card-chapters">
+            <p>
+              <% if current_teacher.nil? %>
+                <%= link_to chapter.title, speciality_chapter_path(chapter) %>
+              <% else %>
+                <%= chapter.title %>
+              <% end %>
+            </p>
+          </div>
+          <div class="row">
+            <% chapter.fiches.each do |fiche| %>
+            <div class="card-fiches-title">
+              <p>
+                <% if current_teacher.nil? %>
+                  <%= link_to fiche.title, speciality_chapter_fich_path(chapter, fiche) %>
+                <% else %>
+                  <%= fiche.title %>
+                <% end %>
+              </p>
+            </div>
+            <%end%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="published-date">
+        <p>
+          <i class="far fa-check-circle"></i>
+          <% if (Time.now - @speciality.updated_at).to_i/24/60/60 == 1 %>    Mise à jour il y à <%= (Time.now - @speciality.updated_at).to_i/24/60/60 %> jour
+           <% elsif ((Time.now - @speciality.updated_at).to_i/24/60/60) > 1 %>
+            Mise à jour il y à <%= (Time.now - @speciality.updated_at).to_i/24/60/60 %> jours
+            <% elsif %>
+             Crée aujourd'hui
+           <% end %>
+        </p>
+      </div>
 
-  <ul>
-    <% @speciality.chapters.each do |chapter| %>
-      <li>
-        <% if current_teacher.nil? %>
-          <%= link_to chapter.title, speciality_chapter_path(chapter) %>
-        <% else %>
-          <%= chapter.title %>
-        <% end %>
-      </li>
-      <ul>
-        <% chapter.fiches.each do |fiche| %>
-          <li>
-            <% if current_teacher.nil? %>
-              <%= link_to fiche.title, speciality_chapter_fich_path(chapter, fiche) %>
-            <% else %>
-              <%= fiche.title %>
-            <% end %>
-          </li>
-        <% end %>
-      </ul>
-    <% end %>
-  </ul>
+      <div class="review">
+      </div>
+
+      <div class= "ranking">
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 
