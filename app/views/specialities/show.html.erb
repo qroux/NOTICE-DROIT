@@ -6,7 +6,7 @@
           <%= cl_image_tag @speciality.teacher.avatar, height: 300, width: 340, crop: :fill, gravity: :face, :class => "avatar" %>
           <%= @speciality.teacher.pseudo %>
         </h3>
-        <%= link_to 'acheter', orders_new_path(speciality_id: @speciality.id), class: "btn btn-success pull-right" %>
+        <%= link_to 'acheter', new_order_path(speciality_id: @speciality.id), class: "btn btn-success pull-right" %>
       </div>
     </div>
     <div class="card-body">
