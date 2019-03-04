@@ -24,3 +24,22 @@
       text-decoration: none;
     }
 }
+
+.form-inline {
+  align-content: stretch;
+}
+
+.research {
+  width: 80%;
+  border-radius: 5px;
+  height: 39px;
+  margin-right: -5px;
+  border: 0px;
+}
+
+input:-webkit-autofill{
+-webkit-box-shadow: 0 0 0 1000px white inset;
+color: black;}
+
+
+
