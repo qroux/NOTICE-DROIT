@@ -1,8 +1,9 @@
 class OrdersController < ApplicationController
   before_action :authenticate_student!, only: [:new, :create]
-  # def index
-  #   @orders = Order.all
-  # end
+  def courses
+    @orders = Order.all
+    @my_orders = @orders.where(student_id: current_student.id)
+  end
 
   # def show
   #   @order = Order.new()
