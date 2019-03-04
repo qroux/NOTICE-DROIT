@@ -32,6 +32,8 @@ class SpecialitiesController < ApplicationController
   def show
     @speciality = Speciality.find(params[:id])
     @chapters = Chapter.all
+    @orders = @speciality.orders
+    @order = @orders.where(student_id: current_student.id)
   end
 
   def new
