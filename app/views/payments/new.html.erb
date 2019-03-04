@@ -2,7 +2,9 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <div class="form-payment">
+        <div class="form-title">
         <h1>Formulaire de Paiement</h1>
+        </div>
         <div class="panel panel-default credit-card-box">
           <div class="panel-heading display-table" >
             <div class="row display-tr" >
@@ -49,12 +51,8 @@
               </div>
               <div class="row">
                 <div class="col-xs-12">
-                  <div class= "payment-button">
-                    <%= link_to "Payer", orders_create_path %>
 
-                  </div>
-                  <%= link_to "Payer(bouton actif)", orders_create_path %>
-                </div>
+                  <%= link_to "Payer", orders_create_path, class: "payment-button" %>
               </div>
             </div>
           </div>
