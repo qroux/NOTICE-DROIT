@@ -19,7 +19,7 @@
           <div class="card-chapters">
             <p>
               <% if current_teacher.nil? %>
-                <%= link_to chapter.title, speciality_chapter_path(chapter) %>
+                <%= link_to chapter.title, speciality_chapter_path(chapter.speciality, chapter) %>
               <% else %>
                 <%= chapter.title %>
               <% end %>
@@ -30,7 +30,7 @@
             <div class="card-fiches-title">
               <p>
                 <% if current_teacher.nil? %>
-                  <%= link_to fiche.title, speciality_chapter_fich_path(chapter, fiche) %>
+                  <%= link_to fiche.title, speciality_chapter_fich_path(fiche.chapter.speciality, fiche.chapter, fiche) %>
                 <% else %>
                   <%= fiche.title %>
                 <% end %>

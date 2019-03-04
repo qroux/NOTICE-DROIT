@@ -3,7 +3,7 @@ class ChaptersController < ApplicationController
   def show
     @chapter = Chapter.find(params[:id])
 
-    @speciality = Speciality.find(params[:id])
+    @speciality = Speciality.find(params[:speciality_id])
     @orders = @speciality.orders
     @order = @orders.where(student_id: current_student.id)
   end
