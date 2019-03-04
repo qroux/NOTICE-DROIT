@@ -1,22 +1,56 @@
-<h1>MES COURS (PROF)</h1>
-
-<ul>
+<h1>Mes spécialités ...</h1>
+<div class = "dashboard-container">
   <% @specialities.each do |speciality| %>
-    <li> <%= speciality.title %></li>
-    <ul> <%= link_to "+ ajouter un chapitre", new_speciality_chapter_path(speciality) %>
-      <% speciality.chapters.each do |chapter|%>
-        <li><%= chapter.title %> </li>
-        <ul>
-          <% chapter.fiches.each do |fiche| %>
-            <li><%= fiche.title  %></li>
-          <% end %>
-          <%= link_to "+ ajouter une fiche", new_speciality_chapter_fich_path(speciality, chapter) %>
-        </ul>
+  <div class = "dashboard">
+    <div class="dashboard-body">
+      <h1>
+      <%= speciality.title %>
+      </h1>
+      <div class="dashboard-chapters_fiches">
+        <% speciality.chapters.each do |chapter|%>
+        <div class="dashboard-row">
+          <div class="dashboard-chapters">
+            <h2><%= chapter.title %></h2>
+          </div>
+          <div class="dashboard-edit-chapitre">
+            <p> <%= link_to "+ éditer le chapitre", new_speciality_chapter_fich_path(speciality, chapter) %>
+            </p>
+          </div>
+        </div>
+        <div class="dashboard-fiches">
+          <div class="dashboard-row">
+            <div class="dashboard-fiches-title">
+              <% chapter.fiches.each do |fiche| %>
+              <h3><%= fiche.title  %></h3>
+              <div class="dashboard-edit-fiche">
+                <p> <%= link_to "+ éditer la fiche", new_speciality_chapter_fich_path(speciality, chapter) %>
+                </p>
+              </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="dashboard-add-fiche">
+          <p> <%= link_to "+ ajouter une fiche", new_speciality_chapter_fich_path(speciality, chapter) %>
+          </p>
+        </div>
+      </div>
       <% end %>
-    </ul>
-  <% end %>
-</ul>
-
-
-
-
+    </div>
+    <div class="dashboard-footer">
+      <%= link_to "+ ajouter un chapitre", new_speciality_chapter_path(speciality) %>
+      <div class="published-date">
+        <p>
+          <i class="far fa-check-circle"></i>
+          <% if (Time.now - speciality.updated_at).to_i/24/60/60 == 1 %>    Mise à jour il y a <%= (Time.now - speciality.updated_at).to_i/24/60/60 %> jour
+          <% elsif ((Time.now - speciality.updated_at).to_i/24/60/60) > 1 %>
+          Mise à jour il y a <%= (Time.now - speciality.updated_at).to_i/24/60/60 %> jours
+          <% elsif %>
+          Crée aujourd'hui
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
