@@ -15,13 +15,15 @@
       </div>
 
       <div class ="card-chapters_fiches">
+        <% counter = 0 %>
         <% @speciality.chapters.each do |chapter| %>
           <div class="card-chapters">
             <p>
               <% if current_teacher.nil? %>
-                <%= link_to chapter.title, speciality_chapter_path(chapter) %>
+
+              <b>Chapitre <%= counter += 1 %>. </b><%= link_to chapter.title, speciality_chapter_path(chapter) %>
               <% else %>
-                <%= chapter.title %>
+                <b>Chapitre <%= counter += 1 %>. </b><%= chapter.title %>
               <% end %>
             </p>
           </div>
