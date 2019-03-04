@@ -12,12 +12,17 @@
 
 body { margin-top:20px; }
 
-.form-payment{
+.form-title{
+  text-align: center;
   h1{
     font-size: 30px;
     margin-bottom: 40px;
     font-weight: bolder;
   }
+}
+
+.credit-card-box .panel-default {
+  text-align: center;
 }
 
 .credit-card-box .panel-title {
@@ -30,6 +35,7 @@ body { margin-top:20px; }
 
 .credit-card-box .display-tr {
     display: table-row;
+    text-align: center;
 }
 .credit-card-box .display-td {
     display: table-cell;
