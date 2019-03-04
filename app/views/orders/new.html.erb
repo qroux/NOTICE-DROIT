@@ -1,11 +1,15 @@
 <h1>Mes achats</h1>
 
+<% if @my_order.present? %>
+  <p>Spécialité : <%= @order.speciality.title  %></p>
+  <p>Statut: vous possedez déjà ce contenu </p>
+  <%= link_to @speciality.title, speciality_path(@speciality), class: "btn btn-success" %>
+<% else %>
+  <p>Spécialité : <%= @order.speciality.title  %> -  prix: <%=@order.speciality.price  %></p>
+  <%= link_to "confirmer", payments_new_path, class: "btn btn-success" %>
+<% end %>
 
-<p>Spécialité : <%= @order.speciality.title  %> -  prix: <%=@order.speciality.price  %></p>
 
 
-
-
-<%= link_to "confirmer", payments_new_path, class: "about-button" %>
 
 
