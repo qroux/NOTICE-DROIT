@@ -32,10 +32,11 @@
     <div class = "card">
       <div class="card-header">
         <div class="card-author">
-            <h3>
-              <%= cl_image_tag speciality.teacher.avatar, height: 300, width: 340, crop: :fill, gravity: :face, :class => "avatar" %>
-              <%= speciality.teacher.pseudo %>
-            </h3>
+          <h3>
+            <%= cl_image_tag speciality.teacher.avatar, height: 300, width: 340, crop: :fill, gravity: :face, :class => "avatar" %>
+            <%= speciality.teacher.pseudo %>
+            <%= link_to 'acheter', orders_new_path(speciality_id: speciality.id), class: "btn btn-success pull-right" %>
+          </h3>
         </div>
       </div>
 

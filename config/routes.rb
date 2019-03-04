@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
 
   get '/my_courses', to: 'specialities#my_courses'
+  get '/courses', to: 'orders#courses'
 
   # vérifier les routes de reviews
   # resources :reviews, only: [:index, :show, :new, :create]

@@ -1,0 +1,7 @@
+<h1>Mes cours</h1>
+
+<% @my_orders.each do |order| %>
+  <p>Spécialité : <%= order.speciality.title  %></p>
+    <%= link_to order.speciality.title, speciality_path(order.speciality), class: "btn btn-success" %>
+<% end %>
+
