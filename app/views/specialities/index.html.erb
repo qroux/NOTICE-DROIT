@@ -30,13 +30,16 @@
 <div class = "card-container">
   <% @specialities.each do |speciality|%>
     <div class = "card">
+      <%= link_to "", speciality_path(speciality), class: "link-card-show"  %>
       <div class="card-header">
         <div class="card-author">
           <h3>
             <%= cl_image_tag speciality.teacher.avatar, height: 300, width: 340, crop: :fill, gravity: :face, :class => "avatar" %>
             <%= speciality.teacher.pseudo %>
-            <%= link_to 'acheter', new_order_path(speciality_id: speciality.id), class: "btn btn-success pull-right" %>
           </h3>
+        </div>
+        <div class="button-buy">
+          <%= link_to 'Acheter', new_order_path(speciality_id: speciality.id) %>
         </div>
       </div>
 
@@ -45,6 +48,7 @@
           <% if current_teacher.nil? %>
             <h1>
               <%= link_to speciality.title, speciality_path(speciality) %>
+
             </h1>
           <% else %>
               <h1>
@@ -74,6 +78,7 @@
           </div>
           <% end %>
         </div>
+
       </div>
       <div class="card-footer">
         <div class="published-date">

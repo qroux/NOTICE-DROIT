@@ -1,38 +1,33 @@
-.card {
-  background: #fff;
-  border-radius: 5px;
-  box-shadow: hsla(0, 0, 0, .2) 0 4px 2px -2px;
-  margin: 43px auto;
-  width: 35rem;
-  @media screen and (min-width: 480px) {
-    width: 55rem;
-  }
-  @media screen and (min-width: 767px) {
-    width: 63rem;
-  }
-  @media screen and (min-width: 959px) {
-    width: 68rem;
+.row1{
+  display: flex;
+  justify-content: start;
+}
+
+.card-fiches-title {
+  font-size: 1.2rem;
+  height: 3.8rem;
+  line-height: 1.4rem;
+  letter-spacing: 1px;
+  padding: 0 1rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+  p a {
+    color: #5eddd2;
+    border: 1px solid #5eddd2;
+    border-radius: 2px;
+    padding: 5px 5px;
   }
 }
 
-.card a {
-  color: black;
-  text-decoration: none;
-  transition: .25s ease;
-  &:hover {
-    border-color: #ff4d4d;
-    color: #ff4d4d;
+.card-fiches-title {
+   a:hover {
+    background-color: #5eddd2;
+    color: white;
+    border-color: #5eddd2;
   }
 }
 
-.avatar {
-  height: 22px;
-  width: 22px;
-  border-radius: 50%;
-}
-
-
-.card-author {
+.card-author-show {
   margin-left: 30px;
   padding-top: .125rem;
   width: 90%;
@@ -44,73 +39,4 @@
     font-weight: 100;
     font-size: 20px;
   }
-}
-
-.card-body {
-  margin: 0 auto;
-  width: 88%;
-  padding-bottom: 10px;
-}
-
-
-.card-speciality_title {
-  h1 {
-    color: #333;
-    font-weight: bold;
-    font-size: 35px;
-    margin-top: -5px;
-  }
-
-}
-
-.card-chapters_fiches{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  padding-left : 30px;
-  // flex-direction: row;
-  // padding-left: 0;
-
-}
-.card-chapters p {
-  color: lighten(#333, 10%);
-}
-
-.row{
-  display: flex;
-  justify-content: start;
-}
-
-.card-fiches-title {
-  width: 40%;
-  font-size: 1.2rem;
-  height: 3.8rem;
-  line-height: 1.4rem;
-  letter-spacing: 1px;
-  padding: 0 1rem;
-  text-align: center;
-  text-transform: uppercase;
-  white-space: nowrap;
-  p a {
-    color: #5eddd2;
-  }
-}
-
-.card-footer {
-  border-top: 1px solid lighten(#333, 70%);
-  margin: 0 auto;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 90%;
-}
-
-.card-footer p {
-    padding-left: 72%;
-    font-size: 13px;
-    font-weight: lighter;
-    color: lighten(#333, 45%);
-  }
-
-.far {
-  color: #5eddd2;
 }
