@@ -28,9 +28,17 @@ class FichesController < ApplicationController
   end
 
   def edit
+    @fiche = Fiche.find(params[:id])
   end
 
   def update
+    @fiche = Fiche.find(params[:id])
+    @fiche.update(fiche_params)
+    if @fiche.save
+      redirect_to my_courses_path
+    else
+      render :edit
+    end
   end
 
   private
