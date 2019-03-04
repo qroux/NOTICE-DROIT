@@ -5,7 +5,7 @@
   <p>Statut: vous possedez déjà ce contenu </p>
   <%= link_to @speciality.title, speciality_path(@speciality), class: "btn btn-success" %>
 <% else %>
-  <p>Spécialité : <%= @order.speciality.title  %> -  prix: <%=@order.speciality.price  %></p>
+  <p>Spécialité : <%= @order.speciality.title  %> -  prix: <%= humanized_money_with_symbol(@order.speciality.price) %></p>
   <%= link_to "confirmer", payments_new_path, class: "btn btn-success" %>
 <% end %>
 
