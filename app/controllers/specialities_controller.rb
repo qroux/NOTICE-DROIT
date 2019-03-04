@@ -1,5 +1,6 @@
 class SpecialitiesController < ApplicationController
   before_action :authenticate_teacher!, only: [:my_courses, :new, :create]
+  before_action :authenticate_student!, only: [:show]
   # vérifier si new et create sont nécessaire dans le before_action
 
   def my_courses
