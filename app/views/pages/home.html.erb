@@ -6,15 +6,23 @@
       <h3>La solution qu'il vous faut pour réussir vos examens</h3>
       <br>
       <br>
-      <p>Accédez à la spécialité que vous recherchez</p>
-      <%= form_tag specialities_path, method: :get do %>
+      <p>Quelle spécialité recherchez-vous ?</p>
+
+
+<%= form_tag specialities_path, method: :get do %>
       <%= text_field_tag :query,
       params[:query],
-      class: "form-control",
+      class: "research",
       placeholder: "Droit de la propriété"
       %>
+      <span> <%=  button_tag( :class => "background_loop") do %> <i class="fa fa-search searchIcon"></i>
+<% end %> </span>
       <% end %>
-    <%= link_to "L'ensemble des spécialités", specialities_path %>
+
+
+      <br>
+      <br>
+    <%= link_to "Accédez à l'ensemble des spécialités", specialities_path, class: "speciality-button" %>
 
     </div>
   </div>
