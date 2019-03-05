@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = current_student.orders.where(status: 'paid').find(params[:id])
+    @order = current_student.orders.where(status: 'payé').find(params[:id])
   end
 
   def new
@@ -25,7 +25,7 @@ class OrdersController < ApplicationController
     @order = Order.new
     @order.speciality_id = session[:params_session]["speciality_id"].to_i
     @order.student_id = current_student.id
-    @order.status = "pending"
+    @order.status = "à régler"
     @order.amount = @order.speciality.price
     if @order.save!
       # redirect_to speciality_path(session[:params_session]["speciality_id"].to_i)   path vers la spécialité achetée
