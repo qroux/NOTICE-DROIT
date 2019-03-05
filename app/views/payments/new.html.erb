@@ -41,8 +41,9 @@
         <span>Amount: <%= humanized_money_with_symbol(@order.amount) %></span>
       </label>
     </article>
+
   <div class="payment-button-2">
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" button_text="Payer"
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" button_text="Payer par carte bancaire"
       data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
       data-name="Ma spécialité"
       data-email="<%= current_student.email %>"
