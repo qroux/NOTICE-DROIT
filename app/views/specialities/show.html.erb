@@ -20,11 +20,11 @@
             <p>
               <% if current_teacher.nil? %>
                 <%= link_to speciality_chapter_path(chapter.speciality, chapter) do %>
-                 <b>Chapitre <%= counter += 1 %> . </b>
+                 <b><%= counter += 1 %> . </b>
                  <%=  chapter.title %>
                  <% end %>
               <% else %>
-                <b>Chapitre <%= counter += 1 %>. </b><%= chapter.title %>
+                <b><%= counter += 1 %>. </b><%= chapter.title %>
               <% end %>
             </p>
           </div>
