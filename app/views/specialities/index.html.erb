@@ -38,9 +38,21 @@
             <%= speciality.teacher.pseudo %>
           </h3>
         </div>
-        <div class="button-buy">
-          <%= link_to 'Acheter', new_order_path(speciality_id: speciality.id) %>
-        </div>
+        <% if student_signed_in? %>
+          <% if speciality.orders.where(student_id: current_student.id).present? %>
+            <div class="already-bought-icon">
+              <%= image_tag 'checked.png', height: 20, width: 20, crop: :fill%>
+            </div>
+          <% else %>
+            <div class="button-buy">
+              <%= link_to 'Acheter', new_order_path(speciality_id: speciality.id) %>
+            </div>
+          <% end %>
+        <% else %>
+          <div class="button-buy">
+            <%= link_to 'Acheter', new_order_path(speciality_id: speciality.id) %>
+          </div>
+        <% end %>
       </div>
 
       <div class="card-body">

@@ -23,10 +23,14 @@ class SpecialitiesController < ApplicationController
 
   def index
     if params[:query].present?
-      @specialities = Speciality.where("title ILIKE ?", params[:query])
+      @specialities = Speciality.kinda_spelled_like(params[:query])
     else
       @specialities = Speciality.all
     end
+
+    # @orders = Order.all
+    # @my_orders = @orders.where(student_id: current_student.id)
+    # @order = @my_orders.find(speciality_id: speciality.id)
   end
 
   def show
@@ -53,6 +57,6 @@ class SpecialitiesController < ApplicationController
   private
 
   def speciality_params
-    params.require(:speciality).permit(:title, :status)
+    params.require(:speciality).permit(:title, :status, :price)
   end
 end

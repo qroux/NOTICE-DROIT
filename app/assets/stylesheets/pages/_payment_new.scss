@@ -1,15 +1,38 @@
+.presentation{
+  @media(max-width: 414px) {
+    h3 { font-size: 30px;
+      font-weight: bold;
+    }
+    p{
+      font-size: 15px;
+    }
+  }
+
+  @media(max-width: 375px) {
+    h3 { font-size: 25px;
+      font-weight: bold;
+    }
+    p{
+      font-size: 10px;
+    }
+  }
+}
+
 .presentation-payment{
   background-color: white;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin: 10px 0px;
   position: relative;
+  border-radius: 2px;
+  border: 1px solid #efefef;
 
   h3 {
-    padding-left: 50%;
+    text-align: center;
     padding-bottom: 32px;
   }
 }
+
 
 .presentation-panier{
   position: absolute;
@@ -19,30 +42,94 @@
   font-weight: lighter;
 }
 
-
-
 .tableau-recapitulatif {
+  border-radius: 2px;
   background-color: white;
+  border: 1px solid #efefef;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 50% 50%;
+
+  @media(max-width: 414px) {
+    h4 { font-size: 12px;
+      font-weight: bold;
+    }
+    p{
+      font-size: 10px;
+    }
+  }
 }
 
-.column-name{
-  display: flex;
-  justify-content: space-between;
-  padding-left: 10px;
-  padding-right: 10px;
+.column-name-1{
+  padding: 10px;
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 1;
+  text-align: center;
+  border-bottom: 1px solid #efefef;
 }
 
-.column-value{
-  display:flex;
-  justify-content: space-between;
-  padding-left: 10px;
-  padding-right: 10px;
+.column-name-2{
+  padding: 10px;
+  grid-row: 1 / span 1;
+  grid-column: 2 / span 1;
+  text-align: center;
+  border-bottom: 1px solid #efefef;
 }
 
-.flex-item{
-  justify-content: center;
+.column-name-3{
+  padding: 10px;
+  grid-row: 1 / span 1;
+  grid-column: 3 / span 1;
+  text-align: center;
+  border-bottom: 1px solid #efefef;
+}
+
+.column-name-4{
+  padding: 10px;
+  grid-row: 1 / span 1;
+  grid-column: 4 / span 1;
+  text-align: center;
+  border-bottom: 1px solid #efefef;
+}
+
+.column-value-1{
+  padding: 10px;
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 1;
+  text-align: center;
+}
+
+.column-value-2{
+  padding: 10px;
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 1;
+  text-align: center;
+}
+
+.column-value-3{
+  padding: 10px;
+  grid-row: 2 / span 1;
+  grid-column: 3 / span 1;
+  text-align: center;
+}
+
+.column-value-4{
+  padding: 10px;
+  grid-row: 2 / span 1;
+  grid-column: 4 / span 1;
+  text-align: center;
 }
 
 .amount{
   color: #F4F4F4;
 }
+
+.payment-button-2{
+  text-align: center;
+}
+
+.stripe-button-el {
+  // display: none;
+  background-color: red!important;
+}
+

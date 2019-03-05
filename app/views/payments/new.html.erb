@@ -1,37 +1,40 @@
 <div class="container center">
-  <div class="presentation-payment">
-    <h3>Méthodes de paiement </h3>
-    <div class="presentation-panier">
-      <p>Votre panier contient 1 spécialité</p>
+  <div class="presentation">
+    <div class="presentation-payment">
+      <h3>Méthodes de paiement </h3>
+      <div class="presentation-panier">
+        <p>Votre panier contient 1 spécialité</p>
+      </div>
     </div>
   </div>
+
   <div class="tableau-recapitulatif">
-    <div class="column-name">
-        <h4>Description</h4>
-
-
-        <h4>Prix unitaire</h4>
-
-        <h4>Quantité</h4>
-
-        <h4>Total</h4>
+    <div class="column-name-1">
+      <h4>Description</h4>
     </div>
-    <div class="column-value">
-      <div class="flex-item">
-        <p><%= @order.speciality.title %></p>
-      </div>
-      <div class="flex-item">
-        <p><%= @order.speciality.price %> €</p>
-      </div>
-      <div class="flex-item">
-        <p> 1 </p>
-      </div>
-      <div class="flex-item">
-        <p><%= @order.amount %> €</p>
-      </div>
+    <div class="column-name-2">
+      <h4>Prix unitaire</h4>
+    </div>
+    <div class="column-name-3">
+      <h4>Quantité</h4>
+    </div>
+    <div class="column-name-4">
+      <h4>Total</h4>
+    </div>
+    <div class="column-value-1">
+      <p><%= @order.speciality.title %></p>
+    </div>
+    <div class="column-value-2">
+      <p><%= @order.speciality.price %> €</p>
+    </div>
+    <div class="column-value-3">
+      <p> 1 </p>
+    </div>
+    <div class="column-value-4">
+      <p><%= @order.amount %> €</p>
     </div>
   </div>
-</div>
+
   <%= form_tag order_payments_path(@order) do %>
     <article>
       <label class="amount">
@@ -39,7 +42,8 @@
       </label>
     </article>
 
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+  <div class="payment-button-2">
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" button_text="Payer par carte bancaire"
       data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
       data-name="Ma spécialité"
       data-email="<%= current_student.email %>"
@@ -47,6 +51,7 @@
       data-amount="<%= @order.amount_cents %>"
       data-currency="<%= @order.amount.currency %>"></script>
   <% end %>
+  </div>
 </div>
 
 

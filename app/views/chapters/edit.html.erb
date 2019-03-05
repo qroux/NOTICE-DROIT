@@ -1,11 +1,20 @@
-
-
-<h2>Editer le chapitre</h2>
-  <%= simple_form_for [@speciality, @chapter] do |f| %>
-  <%= f.error_notification %>
-  <%= f.input :title, label: "Titre du chapitre"%>
-  <%= f.input :content, as: :file %>
-  <%= f.input :content_cache, as: :hidden %>
-  <%= f.button :submit %>
-  <% end %>
-
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="form-login">
+        <h2>Editer le chapitre</h2>
+        <%= simple_form_for [@speciality, @chapter] do |f| %>
+        <%= f.error_notification %>
+        <div class="form-inputs">
+          <%= f.input :title, label: "Titre du chapitre"%>
+          <%= f.input :content, as: :file %>
+          <%= f.input :content_cache, as: :hidden %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
