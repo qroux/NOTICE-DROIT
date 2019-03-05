@@ -1,5 +1,5 @@
 <div class = "card-container">
-  <div class="card">
+  <div class="card-show">
     <div class="card-header">
       <div class="card-author-show">
         <h3>
@@ -16,7 +16,7 @@
       <div class ="card-chapters_fiches">
         <% counter = 0 %>
         <% @speciality.chapters.each do |chapter| %>
-          <div class="card-chapters">
+          <div class="card-chapters-show">
             <p>
               <% if current_teacher.nil? %>
                 <%= link_to speciality_chapter_path(chapter.speciality, chapter) do %>
