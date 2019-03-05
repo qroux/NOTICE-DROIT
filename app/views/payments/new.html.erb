@@ -1,14 +1,37 @@
 <div class="container center">
   <div class="presentation-payment">
-    <h2>Méthodes de paiement :</h2>
-    <p>Votre panier contient 1 spécialité</p>
+    <h3>Méthodes de paiement </h3>
+    <div class="presentation-panier">
+      <p>Votre panier contient 1 spécialité</p>
+    </div>
   </div>
   <div class="tableau-recapitulatif">
-    <h3> Description :  <%= @order.speciality.title %></h3>
-    <h3> Prix unitaire : <%= @order.speciality.price %> €</h3>
-    <h3> Quantité : 1 </h3>
-    <h3>Total : <%= @order.speciality.price %>  €</h3>
+    <div class="column-name">
+        <h4>Description</h4>
+
+
+        <h4>Prix unitaire</h4>
+
+        <h4>Quantité</h4>
+
+        <h4>Total</h4>
+    </div>
+    <div class="column-value">
+      <div class="flex-item">
+        <p><%= @order.speciality.title %></p>
+      </div>
+      <div class="flex-item">
+        <p><%= @order.speciality.price %> €</p>
+      </div>
+      <div class="flex-item">
+        <p> 1 </p>
+      </div>
+      <div class="flex-item">
+        <p><%= @order.amount %> €</p>
+      </div>
+    </div>
   </div>
+</div>
   <%= form_tag order_payments_path(@order) do %>
     <article>
       <label class="amount">
