@@ -9,16 +9,17 @@
     </div>
   </div>
 
-  <div class="liseuse-pdf">
   <% if @order.present? %>
-    <iframe src="https://docs.google.com/viewer?url=<%= @chapter.content %>&embedded=true"
-    style="width:100%; height:450px;" frameborder="0"></iframe>
-    <!-- changer l'url du pdf par la string stockée en local pour @chapter.content ou addcolumn dans la table chapters pour stocker l'url -->
-    <!-- responsive: sur téléphone, width max = 360px/ sur ordinateur, width max = + -->
-</div>
+    <div class="liseuse-pdf">
+      <iframe src="https://docs.google.com/viewer?url=<%= @chapter.content %>&embedded=true"
+      style="width:100%; height:450px;" frameborder="0"></iframe>
+      <!-- changer l'url du pdf par la string stockée en local pour @chapter.content ou addcolumn dans la table chapters pour stocker l'url -->
+      <!-- responsive: sur téléphone, width max = 360px/ sur ordinateur, width max = + -->
+    </div>
   <% else %>
-
-  <p>vous ne possedez pas ce contenu</p>
+    <div class="error-message">
+      <p>Vous ne possedez pas ce contenu</p>
+    </div>
   <% end %>
-
 </div>
+

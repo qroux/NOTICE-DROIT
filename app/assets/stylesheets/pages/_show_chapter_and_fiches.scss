@@ -1,16 +1,20 @@
 .frame {
   background: #fff;
   border-bottom: 1px solid #EEEEEE;
-  margin-top: 3px;
+  margin-top: 6px;
   margin-bottom: 6px;
   padding: 1px 0px 18px 30px;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  text-align: center;
+  position: relative;
 }
 
 .link_to_retour {
-  padding : 8px 17px;
+    padding: 8px 17px;
+    position: absolute;
+    top: 3px;
+    left: 3px;
 
   a{
     color:black;
@@ -22,3 +26,8 @@
   }
 }
 
+
+.error-message {
+  padding-top: 10px;
+ text-align: center;
+}
