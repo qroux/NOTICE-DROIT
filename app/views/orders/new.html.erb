@@ -1,14 +1,24 @@
-<h1>Mes achats</h1>
 
+<div class= "achats">
+<div class= "titre-achats">
+<h1>Mes achats</h1>
+</div>
+
+<div class= "texte-achats">
 <% if @my_order.present? %>
-  <p>Spécialité : <%= @order.speciality.title  %></p>
-  <p>Statut: vous possedez déjà ce contenu </p>
-  <%= link_to @speciality.title, speciality_path(@speciality), class: "btn btn-success" %>
+  <strong> <p class="statut">Vous possedez déjà ce contenu </p></strong>
+   <%= link_to @speciality.title, speciality_path(@speciality), class: "btn btn-success" %>
+  <div class= "retour-achats">
+  <%= link_to "Retour", specialities_path%>
+
+
+</div>
 <% else %>
-  <p>Spécialité : <%= @order.speciality.title  %> -  prix: <%= humanized_money_with_symbol(@order.speciality.price) %></p>
+  <strong><p>Spécialité : <%= @order.speciality.title  %> -  prix: <%= humanized_money_with_symbol(@order.speciality.price) %></p></strong>
   <%= link_to "confirmer", orders_path, method: :post, class: "btn btn-success" %>
 <% end %>
-
+</div>
+</div>
 
 
 

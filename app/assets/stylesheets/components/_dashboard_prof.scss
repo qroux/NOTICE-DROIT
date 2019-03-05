@@ -1,11 +1,12 @@
 
 .dashboard {
-  padding: 5px;
-  background: #fff;
-  border-radius: 5px;
-  box-shadow: hsla(0, 0, 0, .2) 0 4px 2px -2px;
-  margin: 43px auto;
-  width: 130rem;
+
+    padding-top: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 4px 2px -2px;
+    margin: 43px auto;
+    width: 120rem;
 
    h1 {
 
@@ -75,10 +76,11 @@ color:#FE2A55;
   white-space: nowrap;
   width: 7rem;
   margin-bottom: 20px;
+  margin-left: 102px;
 
   p a {
-      color: #FE2A55;
-     border: 1px solid #FE2A55;
+    color: #FE2A55;
+     border: 0.5px solid #FE2A55;
      border-radius: 3px;
      padding: 5px 5px;
   }
@@ -126,20 +128,26 @@ color:#FE2A55;
 }
 
 .dashboard-footer {
-  border-top: 1px solid lighten(#333, 70%);
-  margin: 0 auto;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 90%;
+   padding-top: 10px;
+  background-color: #f9f9f9;
 }
 
-.dashboard-footer p {
-    padding-left: 72%;
+
+.published-date p {
+
+    padding-bottom: 10px;
     font-size: 13px;
     font-weight: lighter;
     color: lighten(#333, 45%);
+    margin-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 5px;
+
   }
 
+.far {
+  color: #5eddd2;
+}
 .far {
   color: #5eddd2;
 }
