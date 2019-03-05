@@ -1,19 +1,24 @@
 <div class="container">
-  <div class= "speciality-chapter-title col-md-12 col-xs-6">
-    <h2>Spécialité : <%= @chapter.speciality.title %></h2>
-    <h3>Chapitre <%= @chapter.title %></h3>
+  <div class= "frame">
+    <div class="speciality-chapter-title">
+      <h3>Spécialité : <%= @chapter.speciality.title %></h3>
+      <p>Chapitre : <%= @chapter.title %></p>
+    </div>
+    <div class="link_to_retour">
+      <%= link_to "Retour", :back %>
+    </div>
   </div>
+
   <div class="liseuse-pdf">
   <% if @order.present? %>
     <iframe src="https://docs.google.com/viewer?url=<%= @chapter.content %>&embedded=true"
     style="width:100%; height:450px;" frameborder="0"></iframe>
     <!-- changer l'url du pdf par la string stockée en local pour @chapter.content ou addcolumn dans la table chapters pour stocker l'url -->
     <!-- responsive: sur téléphone, width max = 360px/ sur ordinateur, width max = + -->
-
+</div>
   <% else %>
-  </div>
+
   <p>vous ne possedez pas ce contenu</p>
-  <%= link_to 'acheter', orders_new_path(speciality_id: @speciality.id), class: "btn btn-success pull-right" %>
   <% end %>
 
 </div>
