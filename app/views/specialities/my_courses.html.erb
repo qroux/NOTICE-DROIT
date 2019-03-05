@@ -1,4 +1,14 @@
 <h1>Mes cours</h1>
+
+<!-- calcul du total généré par l'ensemble des cours de ce prof -->
+<% counter = 0 %>
+<% @specialities.each do |speciality| %>
+<% counter += (speciality.orders.count * speciality.price) %>
+<% end %>
+
+<!-- affichage du total généré -->
+<h3>total généré: <%= counter %>€</h3>
+
 <div class = "dashboard-container">
 <% @specialities.each do |speciality| %>
 <div class = "dashboard">
@@ -30,22 +40,23 @@
               </div>
  </div>
 
-<% end %>
- <div class="dashboard-add-fiche">
+  <% end %>
+        <div class="dashboard-add-fiche">
           <p> <%= link_to "+ ajouter une fiche", new_speciality_chapter_fich_path(speciality, chapter) %>
           </p>
         </div>
+    </div>
+  <% end %>
 </div>
 
 
-<% end %>
-</div>
 </div>
 <div class="dashboard-footer">
    <div class="dashboard-row">
       <div class="dashboard-edit-chapitre">
         <p> <%= link_to "+ ajouter un chapitre", new_speciality_chapter_path(speciality) %>
         </p>
+          <p><%= speciality.orders.count  %> X <%= speciality.price  %> = <%= "#{speciality.orders.count * speciality.price}"  %>€ générés par ce cours</p>
       </div>
       <div class="published-date">
         <p>
