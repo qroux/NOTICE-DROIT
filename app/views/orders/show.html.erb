@@ -4,3 +4,5 @@
   <li>Spécialité: <%= @order.speciality.title %></li>
   <li>Prix: <%= humanized_money_with_symbol(@order.amount) %></li>
 <ul>
+
+<%= link_to "#{@order.speciality.title}", speciality_path(@order.speciality), class: "btn btn-success"  %>
