@@ -1,26 +1,22 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <div class="form-login">
-
-<h2>Ajouter une spécialité</h2>
-<%= simple_form_for @speciality do |f| %>
-<%= f.error_notification %>
-   <div class="form-inputs">
-<%= f.input :title, label: "Nom de la spécialité"%>
-<%= f.input :price, label: "prix"%>
-</div>
-   <div class="form-actions">
-<%= f.button :submit %>
-<div class="new-speciality">
-<%= link_to "Retour", :back %>
-</div>
-</div>
-  <% end %>
+        <h2>Ajouter une spécialité</h2>
+        <%= simple_form_for @speciality do |f| %>
+        <%= f.error_notification %>
+        <div class="form-inputs">
+          <%= f.input :title, label: "Nom de la spécialité"%>
+          <%= f.input :price, label: "prix"%>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit %>
+          <div class="new-speciality">
+            <%= link_to "Retour", :back %>
+          </div>
+        </div>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
-
-
-
