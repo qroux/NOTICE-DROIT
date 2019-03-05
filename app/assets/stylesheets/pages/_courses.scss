@@ -1,0 +1,123 @@
+.titre{
+  text-align: center;
+  margin-bottom: 60px;
+  margin-top: 60px;
+  font-weight: bolder;
+}
+
+.affiche{
+  margin-left: 19%;
+
+}
+
+
+
+.spec{
+  padding-top: 25px;
+  margin-left: 7%;
+  min-height: 180px;
+  max-width: 600px;
+  border: 1px solid #ddd;
+  background-color: white;
+  margin-bottom: 40px;
+  h3{
+    margin-bottom: 50px;
+     padding-bottom: 50px;
+    font-weight: bolder;
+    font-size:24px;
+    border-bottom: solid 0.3px;
+    border-bottom-color: #d9d9d9;
+    width: 90%;
+    color: black;
+    margin: 0 auto;
+    border-spacing: 20px;
+    padding-bottom: 20px;
+
+  }
+  .chapters{
+     margin-bottom: 25px;
+     padding-bottom: 25px;
+    color: black;
+    font-size: 20px !important;
+
+  }
+
+  p{
+    padding-left: 50px;
+    padding-top: 50px;
+    font-size: 20px !important;
+    color:black;
+
+  a{
+    color: black;
+    text-decoration: none;
+    font-size: 20px !important;
+    padding-left: 15px;
+    font-weight: none;
+  }
+  a:hover{
+    color: #ff4d4d;
+    font-size: 20px !important;
+  }
+  }
+
+  .fa {
+    font-size: 10px;
+    margin-right: 5px;
+    padding-bottom: 15px;
+    font-weight: 100;
+  }
+
+  .btn-success {
+    margin-top: 30px;
+  }
+}
+
+.fiches{
+  margin-left: 95px;
+ margin-bottom: 10px;
+  font-size: 16px;
+  border: 1px solid #5eddd2;
+  border-radius: 3px;
+  color: #5eddd2;
+  font-size: 1rem;
+  height: 1.8rem;
+  line-height: 1.6rem;
+  letter-spacing: 1px;
+   padding: 0 0;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: 7rem;
+  a{
+      color: black;
+    text-decoration: none;
+  }
+  a:hover{
+    color: #ff4d4d;
+  }
+  .fa{
+    font-size: 8px;
+    margin-right: 6px;
+    font-weight: 100;
+  }
+}
+
+.card-footer {
+
+  background-color: #f9f9f9;
+
+
+.fake{
+  padding-left: 80px;
+  font-size: 15px;
+
+
+  .fa {
+    padding-left: 50px;
+    font-size: 12px;
+  }
+  }
+}
+
+

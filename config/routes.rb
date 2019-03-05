@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  get 'orders/index'
-  get 'orders/new'
-  get 'orders/create'
-  get 'payments/create', to: 'payments#create'
-  get 'payments/new', to: 'payments#new'
+  # post 'orders/create', to: 'orders#create', as: 'orders/create'
+  # get 'payments/create', to: 'payments#create'
+  # get 'payments/new', to: 'payments#new'
   root to: 'pages#home'
 
   resources :specialities, only: [:new, :create, :index, :show] do
@@ -12,9 +10,15 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :orders, only: [:index, :show, :new, :create] do
+    resources :payments, only: [:new, :create]
+  end
+
+
 
   get '/my_courses', to: 'specialities#my_courses'
   get '/courses', to: 'orders#courses'
+
 
   # vérifier les routes de reviews
   # resources :reviews, only: [:index, :show, :new, :create]

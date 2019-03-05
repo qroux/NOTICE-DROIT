@@ -1,0 +1,6 @@
+<h1>Mon historique d'achat</h1>
+<ul>
+  <li>Status: <%= @order.status %></li>
+  <li>Spécialité: <%= @order.speciality.title %></li>
+  <li>Prix: <%= humanized_money_with_symbol(@order.amount) %></li>
+<ul>
