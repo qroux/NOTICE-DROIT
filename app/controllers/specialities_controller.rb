@@ -27,6 +27,10 @@ class SpecialitiesController < ApplicationController
     else
       @specialities = Speciality.all
     end
+
+    # @orders = Order.all
+    # @my_orders = @orders.where(student_id: current_student.id)
+    # @order = @my_orders.find(speciality_id: speciality.id)
   end
 
   def show
