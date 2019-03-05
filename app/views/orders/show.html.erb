@@ -1,8 +1,15 @@
-<h1>Mon historique d'achat</h1>
-<ul>
-  <li>Status: <%= @order.status %></li>
-  <li>Spécialité: <%= @order.speciality.title %></li>
-  <li>Prix: <%= humanized_money_with_symbol(@order.amount) %></li>
-<ul>
-
-<%= link_to "#{@order.speciality.title}", speciality_path(@order.speciality), class: "btn btn-success"  %>
+<div class="container center">
+  <div class="presentation-payment">
+    <h1>Récapitulatif de votre achat</h1>
+  </div>
+  <div class="tableau-recapitulatif">
+    <ul>
+      <li> Spécialité :  <%= @order.speciality.title %></li>
+      <li> Prix unitaire : <%= @order.speciality.price %> €</li>
+      <li> Quantité : 1 </li>
+      <li> Status: <%= @order.status %></li>
+      <li> Total : <%= @order.speciality.price %>  €</li>
+    </ul>
+    <%= link_to "#{@order.speciality.title}", speciality_path(@order.speciality), class: "btn btn-success pull-right"  %>
+  </div>
+</div>
