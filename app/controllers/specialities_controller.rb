@@ -23,7 +23,7 @@ class SpecialitiesController < ApplicationController
 
   def index
     if params[:query].present?
-      @specialities = Speciality.where("title ILIKE ?", params[:query])
+      @specialities = Speciality.kinda_spelled_like(params[:query])
     else
       @specialities = Speciality.all
     end
