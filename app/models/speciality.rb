@@ -11,5 +11,5 @@ class Speciality < ApplicationRecord
                   using: { trigram: {
                       threshold: 0.5
                     }
-
+                  }
 end
