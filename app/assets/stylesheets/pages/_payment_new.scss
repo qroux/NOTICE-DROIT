@@ -1,3 +1,48 @@
 .presentation-payment{
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0px;
+  position: relative;
 
+  h3 {
+    padding-left: 50%;
+    padding-bottom: 32px;
+  }
+}
+
+.presentation-panier{
+  position: absolute;
+  bottom: -10px;
+  right: 10px;
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+
+
+.tableau-recapitulatif {
+  background-color: white;
+}
+
+.column-name{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.column-value{
+  display:flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.flex-item{
+  justify-content: center;
+}
+
+.amount{
+  color: #F4F4F4;
 }
