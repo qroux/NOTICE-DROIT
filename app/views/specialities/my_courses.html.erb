@@ -8,6 +8,7 @@
     <% end %>
     <!-- affichage du total généré -->
     <h3>total généré: <%= counter %>€</h3>
+  </div>
     <div class = "dashboard-container">
       <% @specialities.each do |speciality| %>
       <div class = "dashboard">
@@ -69,8 +70,7 @@
       </div>
       <% end %>
     </div>
-  </div>
-  <% end %>
+    </div>
   <div class="new-speciality">
     <% if current_teacher.nil? %>
     <% else %>
