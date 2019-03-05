@@ -11,6 +11,7 @@ gem 'redis'
 gem 'devise'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
+gem 'stripe'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'

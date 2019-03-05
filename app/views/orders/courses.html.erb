@@ -1,7 +1,41 @@
-<h1>Mes cours</h1>
+<div class="titre">
+  <strong> <h1>Mes Cours</h1></strong>
+</div>
 
-<% @my_orders.each do |order| %>
-  <p>Spécialité : <%= order.speciality.title  %></p>
-    <%= link_to order.speciality.title, speciality_path(order.speciality), class: "btn btn-success" %>
-<% end %>
+</div>
+<div class="card-body">
+  <span event="click">
+    <div class="affiche">
+      <% @my_orders.each do |order| %>
+      <div class="spec">
+      </span>
+      <div class="spectitle">
+        <h3><%= order.speciality.title %></h3>
+      </div>
+      <div class="chapters">
+        <% counter = 0 %>
+        <% order.speciality.chapters.each do |chapter| %>
+        <p><b> <%= counter += 1 %>. </b><%= link_to chapter.title, speciality_chapter_path(chapter.speciality, chapter) %></p>
+          <% if chapter.fiches.length > 0 %>
 
+         <% chapter.fiches.each do |fiche| %>
+         <div class="fiches">
+          <i class="fa fa-circle"></i><%= link_to fiche.title, speciality_chapter_fich_path(fiche.chapter.speciality, fiche.chapter, fiche) %>
+          </div>
+        <% end %>
+
+        <% end %>
+
+        <% end %>
+           <div class="fake">
+            <div class="fake1">
+              <i class="fa fa-file" ></i> Mes Flashcards
+              <i class="fa fa-calendar" ></i>  Mon Calendrier
+            </div>
+            </div>
+      </div>
+    </div>
+    <% end %>
+
+  </div>
+</div>

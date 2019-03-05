@@ -1,66 +1,30 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <div class="form-payment">
-        <div class="form-title">
-        <h1>Formulaire de Paiement</h1>
-        </div>
-        <div class="panel panel-default credit-card-box">
-          <div class="panel-heading display-table" >
-            <div class="row display-tr" >
-              <h3 class="panel-title display-td">Détails de Paiement</h3>
-              <div class="display-td" >
-                <img class="img-responsive pull-right" src="https://i76.imgup.net/accepted_c22e0.png">
-              </div>
-            </div>
-          </div>
-          <div class="panel-body">
-            <form role="form" id="payment-form" method="POST" action="">
-              <div class="row">
-                <div class="col-xs-12">
-                  <div class="form-group">
-                    <label for="cardNumber">Numéro de Carte</label>
-                    <div class="input-group">
-                      <input type="card_number" class="form-control", id= "cardNumber", placeholder="Numéro de Carte">
-                      <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12">
-                  <div class="form-group">
-                    <label for="name">Titulaire de la Carte</label>
-                    <input type="card_number" class="form-control", id= "name", placeholder="Nom">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xs-7 col-md-7">
-                  <div class="form-group">
-                    <label for="cardExpiry">Date d'expiration</label>
-                    <input type="Expiration" class="form-control", id= "cardExpiry", placeholder="MM/YY">
-                  </div>
-                </div>
-                <div class="col-xs-5 col-md-5 pull-right">
-                  <div class="form-group">
-                    <label for="cardCVC">Cryptogramme</label>
-                    <input type="Expiration" class="form-control", id= "cardCVC", placeholder="Code CVV">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xs-12">
+<div class="container center">
+  <h1>Achat de la spécialité <%= @order.speciality.title %></h1>
+  <%= form_tag order_payments_path(@order) do %>
+    <article>
+      <label class="amount">
+        <span>Amount: <%= humanized_money_with_symbol(@order.amount) %></span>
+      </label>
+    </article>
 
-                  <%= link_to "Payer", orders_create_path, class: "payment-button" %>
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+      data-name="Ma spécialité"
+      data-email="<%= current_student.email %>"
+      data-description="Spécialité <%= @order.speciality.title %>"
+      data-amount="<%= @order.amount_cents %>"
+      data-currency="<%= @order.amount.currency %>"></script>
+  <% end %>
 </div>
-</div>
+
+
+
+
+
+
+
+
+
+
 
 
