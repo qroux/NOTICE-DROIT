@@ -25,9 +25,18 @@ class ChaptersController < ApplicationController
   end
 
   def edit
+    @speciality = Speciality.find(params[:speciality_id])
+    @chapter = Chapter.find(params[:id])
   end
 
   def update
+      @chapter = Chapter.find(params[:id])
+    @chapter.update(chapter_params)
+    if @chapter.save
+      redirect_to my_courses_path
+    else
+      render :edit
+    end
   end
 
   private
