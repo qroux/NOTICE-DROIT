@@ -61,7 +61,16 @@
       </div>
     </div>
 </div>
-
-
  <% end %>
+
+ <div class="new-speciality">
+<% if current_teacher.nil? %>
+<% else %>
+  <%= link_to "Ajouter une spécialité", new_speciality_path, class: "about-button" %>
+<% end %>
 </div>
+</div>
+
+
+
+

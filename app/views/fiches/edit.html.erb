@@ -1,9 +1,21 @@
-<h1>J'édite ma fiche</h1>
-
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="form-login">
+<h2>Editer la fiche</h2>
   <%= simple_form_for [@speciality, @chapter, @fiche], url: speciality_chapter_fich_path do |f| %>
   <%= f.error_notification %>
+    <div class="form-inputs">
   <%= f.input :title, label: "Titre de la fiche"%>
   <%= f.input :content, as: :file %>
-
+</div>
+        <div class="form-actions">
   <%= f.button :submit %>
-  <% end %>
+  </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
