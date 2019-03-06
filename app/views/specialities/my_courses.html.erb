@@ -6,75 +6,86 @@
     <% @specialities.each do |speciality| %>
     <% counter += (speciality.orders.count * speciality.price) %>
     <% end %>
+    <h4>Ma cagnotte: <%= counter %>€</h4>
     <!-- affichage du total généré -->
-    <h3>total généré: <%= counter %>€</h3>
   </div>
-    <div class = "dashboard-container">
-      <% @specialities.each do |speciality| %>
-      <div class = "dashboard">
-        <div class="dashboard-body">
+  <div class = "dashboard-container">
+    <% @specialities.each do |speciality| %>
+    <div class = "dashboard">
+      <div class="dashboard-body">
+        <div class="dashboard-speciality-title">
           <h1>
           <%= speciality.title %>
           </h1>
           <div class="dashboard-chapters_fiches">
-            <% speciality.chapters.each do |chapter|%>
-            <div class="dashboard-row">
-              <div class="dashboard-chapters">
-                <h2><%= chapter.title %></h2>
-              </div>
-              <div class="dashboard-edit-chapitre">
-                <p> <%= link_to "+ éditer le chapitre", edit_speciality_chapter_path(speciality, chapter) %>
-                </p>
-              </div>
-            </div>
-            <div class="dashboard-fiches">
-              <% chapter.fiches.each do |fiche| %>
+            <ol>
+              <% speciality.chapters.each do |chapter|%>
               <div class="dashboard-row">
-                <div class="dashboard-fiches-title">
-                  <h3><%= fiche.title  %></h3>
+                <div class="dashboard-chapters">
+                  <li><%= chapter.title %></li>
                 </div>
-                <div class="dashboard-edit-fiche">
-                  <p> <%= link_to "+ éditer la fiche", edit_speciality_chapter_fich_path(fiche.chapter.speciality.id, fiche.chapter.id, fiche) %>
+                <div class="dashboard-edit-chapitre">
+                  <p> <%= link_to edit_speciality_chapter_path(speciality, chapter) do %>
+                    <i class="far fa-edit"></i>
+                    <% end %>
+                  </p>
+                </div>
+              </div>
+              <div class="dashboard-fiches">
+                <% chapter.fiches.each do |fiche| %>
+                <div class="dashboard-row">
+                  <div class="dashboard-fiches-title">
+                    <h3><%= fiche.title  %></h3>
+                  </div>
+                  <div class="dashboard-edit-fiche">
+                    <p> <%= link_to edit_speciality_chapter_fich_path(fiche.chapter.speciality.id, fiche.chapter.id, fiche) do %>
+                      <i class="far fa-edit"></i>
+                      <% end %>
+                    </p>
+                  </div>
+                </div>
+                <% end %>
+                <div class="dashboard-add-fiche">
+                  <p> <%= link_to "+ ajouter une fiche", new_speciality_chapter_fich_path(speciality, chapter) %>
                   </p>
                 </div>
               </div>
               <% end %>
-              <div class="dashboard-add-fiche">
-                <p> <%= link_to "+ ajouter une fiche", new_speciality_chapter_fich_path(speciality, chapter) %>
-                </p>
-              </div>
-            </div>
-            <% end %>
-          </div>
-        </div>
-        <div class="dashboard-footer">
-          <div class="dashboard-row">
-            <div class="dashboard-edit-chapitre">
-              <p> <%= link_to "+ ajouter un chapitre", new_speciality_chapter_path(speciality) %>
-              </p>
-              <p><%= speciality.orders.count  %> X <%= speciality.price  %> = <%= "#{speciality.orders.count * speciality.price}"  %>€ générés par ce cours</p>
-            </div>
-            <div class="published-date">
-              <p>
-                <i class="far fa-check-circle"></i>
-                <% if (Time.now - speciality.updated_at).to_i/24/60/60 == 1 %>    Mise à jour il y a <%= (Time.now - speciality.updated_at).to_i/24/60/60 %> jour
-                <% elsif ((Time.now - speciality.updated_at).to_i/24/60/60) > 1 %>
-                Mise à jour il y a <%= (Time.now - speciality.updated_at).to_i/24/60/60 %> jours
-                <% elsif %>
-                Crée aujourd'hui
-                <% end %>
-              </p>
-            </div>
+              <li><p> <%= link_to "Ajouter un chapitre", new_speciality_chapter_path(speciality) %>
+              </p></li>
+            </ol>
           </div>
         </div>
       </div>
-      <% end %>
+      <div class="dashboard-footer">
+        <div class="dashboard-row">
+          <div class="speciality-count">
+            <p>
+              <i class="fas fa-euro-sign"></i>
+            <%= speciality.orders.count  %> X <%= speciality.price  %> = <%= "#{speciality.orders.count * speciality.price}"  %>€ générés par ce cours</p>
+          </div>
+          <div class="published-date">
+            <p>
+              <i class="far fa-check-circle"></i>
+              <% if (Time.now - speciality.updated_at).to_i/24/60/60 == 1 %>    Mise à jour il y a <%= (Time.now - speciality.updated_at).to_i/24/60/60 %> jour
+              <% elsif ((Time.now - speciality.updated_at).to_i/24/60/60) > 1 %>
+              Mise à jour il y a <%= (Time.now - speciality.updated_at).to_i/24/60/60 %> jours
+              <% elsif %>
+              Crée aujourd'hui
+              <% end %>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-    </div>
-  <div class="new-speciality">
-    <% if current_teacher.nil? %>
-    <% else %>
-    <%= link_to "Ajouter une spécialité", new_speciality_path, class: "about-button" %>
     <% end %>
   </div>
+  <div class="new-speciality">
+  <% if current_teacher.nil? %>
+  <% else %>
+  <%= link_to "Ajouter une spécialité", new_speciality_path, class: "about-button" %>
+  <% end %>
+</div>
+</div>
+
 </div>
