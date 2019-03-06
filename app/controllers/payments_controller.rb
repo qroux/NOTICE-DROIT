@@ -18,7 +18,10 @@ class PaymentsController < ApplicationController
     )
 
     @order.update(payment: charge.to_json, status: 'payé')
-    redirect_to order_path(@order)
+    redirect_to courses_path
+    # "redirige vers la facture d'achat"
+    # redirect_to order_path(@order)
+
 
   rescue Stripe::CardError => e
     flash[:alert] = e.message
