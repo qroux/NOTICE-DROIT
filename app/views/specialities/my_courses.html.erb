@@ -39,7 +39,7 @@
                   </div>
                   <div class="dashboard-edit-fiche">
                     <p> <%= link_to edit_speciality_chapter_fich_path(fiche.chapter.speciality.id, fiche.chapter.id, fiche) do %>
-                      <i class="far fa-edit"></i>
+                      <i class="farfiches far fa-edit"></i>
                       <% end %>
                     </p>
                   </div>
@@ -61,7 +61,7 @@
         <div class="dashboard-row">
           <div class="speciality-count">
             <p>
-              <i class="fas fa-euro-sign"></i>
+              <i class="euros fas fa-euro-sign"></i>
             <%= speciality.orders.count  %> X <%= speciality.price  %> = <%= "#{speciality.orders.count * speciality.price}"  %>€ générés par ce cours</p>
           </div>
           <div class="published-date-dashboard">
