@@ -2,16 +2,16 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <div class="form-login">
-        <h2>Editer le chapitre</h2>
+        <h2>Éditer le chapitre</h2>
         <%= simple_form_for [@speciality, @chapter] do |f| %>
         <%= f.error_notification %>
         <div class="form-inputs">
           <%= f.input :title, label: "Titre du chapitre"%>
-          <%= f.input :content, as: :file %>
+          <%= f.input :content, as: :file, label: "Contenu(pdf)" %>
           <%= f.input :content_cache, as: :hidden %>
         </div>
         <div class="form-actions">
-          <%= f.button :submit %>
+          <%= f.button :submit, "Mettre à jour" %>
         </div>
         <% end %>
       </div>
