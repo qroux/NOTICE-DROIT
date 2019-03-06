@@ -6,125 +6,112 @@
       <br>
       <br>
       <p>Quelle spécialité recherchez-vous ?</p>
-
-     <%= form_tag specialities_path, method: :get do %>
+      <%= form_tag specialities_path, method: :get do %>
       <%= text_field_tag :query,
       params[:query],
       class: "research",
-         placeholder: "Droit de la propriété"
+      placeholder: "Droit de la propriété"
       %>
       <span> <%=  button_tag( :class => "background_loop") do %> <i class="fa fa-search searchIcon"></i>
-<% end %> </span>
+      <% end %> </span>
       <% end %>
-
-
       <br>
       <br>
-    <%= link_to "Accédez à l'ensemble des spécialités", specialities_path, class: "speciality-button" %>
+      <%= link_to "Accédez à l'ensemble des spécialités", specialities_path, class: "speciality-button" %>
     </div>
   </div>
 </div>
-
-
-
 <div class = "card-container">
   <% @specialities.each do |speciality|%>
-    <div class = "card">
-      <%= link_to "", speciality_path(speciality), class: "link-card-show"  %>
-      <div class="card-header">
-        <div class="card-author">
-          <h3>
-            <%= cl_image_tag speciality.teacher.avatar, height: 300, width: 340, crop: :fill, gravity: :face, :class => "avatar" %>
-            <%= speciality.teacher.pseudo %>
-          </h3>
-        </div>
-        <% if student_signed_in? %>
-          <% if speciality.orders.find_by(student_id: current_student.id).present? %>
-            <% if speciality.orders.find_by(student_id: current_student.id).status == "payé" %>
-            <div class="already-bought-icon">
-              <%= image_tag 'checked.png', height: 20, width: 20, crop: :fill%>
-            </div>
-            <% else %>
-              <div class= "button-buy">
-                <% a = speciality.orders.find_by(student_id: current_student.id) %>
-                <%= link_to "terminer la commande", new_order_payment_path(order_id: a.id) %>
-              </div>
-            <% end %>
-          <% else %>
-            <div class="button-buy">
-              <%= link_to 'Acheter', new_order_path(speciality_id: speciality.id) %>
-            </div>
-          <% end %>
+  <div class = "card">
+    <%= link_to "", speciality_path(speciality), class: "link-card-show"  %>
+    <div class="card-header">
+      <div class="card-author">
+        <h3>
+        <%= cl_image_tag speciality.teacher.avatar, height: 300, width: 340, crop: :fill, gravity: :face, :class => "avatar" %>
+        <%= speciality.teacher.pseudo %>
+        </h3>
+      </div>
+      <% if teacher_signed_in? %>
+      <% elsif student_signed_in?  %>
+      <% if speciality.orders.find_by(student_id: current_student.id).present? %>
+      <% if speciality.orders.find_by(student_id: current_student.id).status == "payé" %>
+      <div class="already-bought-icon">
+        <%= image_tag 'checked.png', height: 20, width: 20, crop: :fill%>
+      </div>
+      <% else %>
+      <div class= "button-buy">
+        <% a = speciality.orders.find_by(student_id: current_student.id) %>
+        <%= link_to "terminer la commande", new_order_payment_path(order_id: a.id) %>
+      </div>
+      <% end %>
+      <% else %>
+      <div class="button-buy">
+        <%= link_to 'Acheter', new_order_path(speciality_id: speciality.id) %>
+      </div>
+      <% end %>
+      <% else %>
+      <div class="button-buy">
+        <%= link_to 'Acheter', new_order_path(speciality_id: speciality.id) %>
+      </div>
+      <% end %>
+    </div>
+    <div class="card-body">
+      <div class="card-speciality_title">
+        <% if current_teacher.nil? %>
+        <h1>
+        <%= link_to speciality.title, speciality_path(speciality) %>
+        </h1>
         <% else %>
-          <div class="button-buy">
-            <%= link_to 'Acheter', new_order_path(speciality_id: speciality.id) %>
-          </div>
+        <h1>
+        <%= speciality.title %>
+        </h1>
         <% end %>
       </div>
-
-      <div class="card-body">
-        <div class="card-speciality_title">
-          <% if current_teacher.nil? %>
-            <h1>
-              <%= link_to speciality.title, speciality_path(speciality) %>
-
-            </h1>
-          <% else %>
-              <h1>
-                <%= speciality.title %>
-              </h1>
-          <% end %>
-        </div>
-
-        <div class ="card-chapters_fiches">
-          <% counter = 0 %>
-          <% speciality.chapters.each do |chapter| %>
-          <div class="card-row">
-            <div class="card-chapters">
-              <p>
-                <b> <%= counter += 1 %>. </b>
-                <%= chapter.title %>
-              </p>
-            </div>
-
-            <div class="card-fiches">
-              <% if chapter.fiches.length <= 1 %>
-                <p><%= chapter.fiches.length %> fiche</p>
-              <% else %>
-                <%= chapter.fiches.length %> fiches
-              <% end %>
-            </div>
+      <div class ="card-chapters_fiches">
+        <% counter = 0 %>
+        <% speciality.chapters.each do |chapter| %>
+        <div class="card-row">
+          <div class="card-chapters">
+            <p>
+              <b> <%= counter += 1 %>. </b>
+              <%= chapter.title %>
+            </p>
           </div>
-          <% end %>
+          <div class="card-fiches">
+            <% if chapter.fiches.length <= 1 %>
+            <p><%= chapter.fiches.length %> fiche</p>
+            <% else %>
+            <%= chapter.fiches.length %> fiches
+            <% end %>
+          </div>
         </div>
-
-      </div>
-      <div class="card-footer">
-        <div class="published-date">
-          <p>
-            <i class="far fa-check-circle"></i>
-            <% if (Time.now - speciality.updated_at).to_i/24/60/60 == 1 %>    Mise à jour il y à <%= (Time.now - speciality.updated_at).to_i/24/60/60 %> jour
-             <% elsif ((Time.now - speciality.updated_at).to_i/24/60/60) > 1 %>
-              Mise à jour il y à <%= (Time.now - speciality.updated_at).to_i/24/60/60 %> jours
-              <% elsif %>
-               Crée aujourd'hui
-             <% end %>
-          </p>
-        </div>
-
-        <div class="review">
-        </div>
-
-        <div class= "ranking">
-        </div>
+        <% end %>
       </div>
     </div>
+    <div class="card-footer">
+      <div class="published-date">
+        <p>
+          <i class="far fa-check-circle"></i>
+          <% if (Time.now - speciality.updated_at).to_i/24/60/60 == 1 %>    Mise à jour il y à <%= (Time.now - speciality.updated_at).to_i/24/60/60 %> jour
+          <% elsif ((Time.now - speciality.updated_at).to_i/24/60/60) > 1 %>
+          Mise à jour il y à <%= (Time.now - speciality.updated_at).to_i/24/60/60 %> jours
+          <% elsif %>
+          Crée aujourd'hui
+          <% end %>
+        </p>
+      </div>
+      <div class="review">
+      </div>
+      <div class= "ranking">
+      </div>
+    </div>
+  </div>
   <% end %>
+  <div class="button-add-speciality">
+    <% if current_teacher.nil? %>
+    <% else %>
+    <%= link_to "+ Ajouter une spécialité", new_speciality_path %>
+    <% end %>
+  </div>
 </div>
-
-
-
-<% if current_teacher.nil? %>
-<% else %>
-  <%= link_to "Ajouter une spécialité", new_speciality_path %>
-<% end %>
