@@ -13,27 +13,30 @@
   color: white;
 }
 
-.affiche{
-  display: flex;
-  justify-content: center;
-  width: 100%;
+// .affiche{
+//   display: flex;
+//   justify-content: center;
+//   width: 100%;
 
-}
+// }
+
 
 @media screen and (max-width: 500px){
-  .affiche{
+  .spec{
     width: 90%;
   }
 }
 
 .spec{
+  box-shadow: rgba(0, 0, 0, 0.2) 0 4px 2px -2px;
   padding-top: 25px;
+  margin: 20px auto;
   padding-right: 15px;
   border: 1px solid #ddd;
   background-color: white;
   margin-bottom: 40px;
   border-radius: 5px;
-  width: 100%;
+  width: 55%;
 
   h3{
     margin-bottom: 20px;
@@ -92,7 +95,9 @@
   text-transform: uppercase;
   flex-wrap: wrap;
   width: -webkit-fit-content;
+  max-width: 55%;
   overflow: hidden;
+  text-overflow: ellipsis;
 
   a{
     overflow: hidden;
@@ -124,6 +129,13 @@
     font-size: 12px;
   }
 
+}
+
+
+@media screen and (max-width: 500px){
+  .fake1{
+    padding-left: 35px;
+  }
 }
 
 
