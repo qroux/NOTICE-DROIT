@@ -1,10 +1,18 @@
+.card-container {
+      padding-top: 10px;
+  background-image: image-url('matiere2.jpg');
+  background-size: cover;
+  background-color: (-225deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)50%);
+  padding-bottom: 5%;
+}
+
 .row1{
   display: flex;
   justify-content: start;
 }
 
 .card-show {
-    background: #fff;
+  background: #fff;
   border-radius: 5px;
   box-shadow: hsla(0, 0, 0, .2) 0 4px 2px -2px;
   margin: 43px auto;
@@ -23,7 +31,7 @@
   a {
   color: black;
   text-decoration: none;
-}
+  }
 }
 
 
@@ -37,7 +45,7 @@
   text-transform: uppercase;
   white-space: nowrap;
   p a {
-    color: #5eddd2;
+    color: black;
     border: 1px solid #5eddd2;
     border-radius: 2px;
     padding: 5px 5px;
@@ -47,7 +55,7 @@
 .card-fiches-title {
    a:hover {
     background-color: #5eddd2;
-    color: white;
+    color: black;
     border-color: #5eddd2;
   }
 }
