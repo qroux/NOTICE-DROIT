@@ -3,6 +3,10 @@ class FichesController < ApplicationController
 
   def show
     @fiche = Fiche.find(params[:id])
+
+    @speciality = Speciality.find(params[:speciality_id])
+    @orders = @speciality.orders
+    @order = @orders.find_by(student_id: current_student.id)
   end
 
   def new
