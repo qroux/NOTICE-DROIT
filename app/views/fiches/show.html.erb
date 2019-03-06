@@ -11,7 +11,7 @@
     </div>
   </div>
 
-  <% if @order.present? %>
+  <% if @order.status == "payé" %>
     <div class="liseuse-pdf">
       <iframe src="https://docs.google.com/viewer?url=<%= @fiche.content %>&embedded=true"
       style="width:100%; height:450px;" frameborder="0"></iframe>
