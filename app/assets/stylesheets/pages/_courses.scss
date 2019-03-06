@@ -2,31 +2,39 @@
   background-image: url('student3.jpg');
    background-size: cover;
     background-color: (-225deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)50%);
+
 }
 
 .titre{
   text-align: center;
   margin-bottom: 60px;
-  margin-top: 60px;
+  padding-top: 60px;
   font-weight: bolder;
   color: white;
 }
 
 .affiche{
-  margin-left: 19%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 
 }
 
-
+@media screen and (max-width: 500px){
+  .affiche{
+    width: 90%;
+  }
+}
 
 .spec{
   padding-top: 25px;
-  margin-left: 7%;
-  min-height: 180px;
-  max-width: 600px;
+  padding-right: 15px;
   border: 1px solid #ddd;
   background-color: white;
   margin-bottom: 40px;
+  border-radius: 5px;
+  width: 100%;
+
   h3{
     margin-bottom: 20px;
      padding-bottom: 20px;
@@ -44,11 +52,8 @@
 }
   .chapters{
      margin-bottom: 25px;
-
     color: #333333;
     font-size: 20px !important;
-
-
 
   p{
     padding-left: 50px;
@@ -70,16 +75,9 @@
   }
   }
 
-
-
-  .btn-success {
-    margin-top: 30px;
-  }
-
-
 .fiches{
   margin-left: 90px;
- margin-bottom: 10px;
+  margin-bottom: 10px;
   font-size: 16px;
   border: 1px solid #5eddd2;
   border-radius: 3px;
@@ -92,10 +90,12 @@
   padding-right: 4px;
   text-align: center;
   text-transform: uppercase;
-  white-space: nowrap;
+  flex-wrap: wrap;
   width: -webkit-fit-content;
+  overflow: hidden;
 
   a{
+    overflow: hidden;
     color: #333333;
     text-decoration: none;
     font-size: 14px !important;
@@ -108,27 +108,22 @@
 }
 
 .student-footer {
-
   background-color: #f9f9f9;
   padding-bottom: 15px;
   padding-top: 15px;
-
-
-.fake{
-  padding-left: 100px;
   font-size: 15px;
   display: flex;
-
+  justify-content: center;
 
   .fake1 {
-    padding-left: 55px;
+
     font-size: 12px;
   }
     .fake2 {
-    padding-left: 55px;
+     padding-left: 55px;
     font-size: 12px;
   }
-  }
+
 }
 
 
