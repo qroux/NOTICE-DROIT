@@ -41,27 +41,27 @@
 
 
 .button-buy {
-  flex: 0 0 12%;
-  border-radius: 50px;
-  background-color: #ffcb4e;
-  padding: 8px;
-  margin: 20px 15px;
-  position:absolute;
-  top:-3px;
-  right:2px;
-  z-index: 1;
+    border-radius: 8px;
+    background-color: #ed5360;
+    border: 1px solid #ed5360;
+    padding: 0px 8px 2px 8px;
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    z-index: 1;
   a {
       color : white!important;
       font-weight: lighter;
+      font-size: 16px;
   }
 }
 
 .button-buy:hover {
   background-color: white;
-  border: 0.5px solid  #ffcb4e;
-  margin: 19.5px 15px;
+  padding: 0px 8px 2px 8px;
+  border: 1px solid #ed5360;
   a {
-    color : #ffcb4e!important;
+    color : #ed5360!important;
   }
 }
 
@@ -83,3 +83,16 @@
   margin: 25px;
 }
 
+.button-add-speciality {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+  a{
+    color: #E14452;
+    text-decoration: none;
+  }
+
+  a:hover{
+  font-weight: bold;
+  }
+}
