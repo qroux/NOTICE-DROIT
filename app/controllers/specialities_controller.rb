@@ -47,6 +47,7 @@ class SpecialitiesController < ApplicationController
   def create
     @speciality = Speciality.new(speciality_params)
     @speciality.teacher = current_teacher
+    @speciality.price = 15
     if @speciality.save
       redirect_to new_speciality_chapter_path(@speciality)
     else
