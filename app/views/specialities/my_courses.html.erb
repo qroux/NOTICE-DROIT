@@ -62,7 +62,8 @@
           <div class="speciality-count">
             <p>
               <i class="euros fas fa-euro-sign"></i>
-            <%= speciality.orders.count  %> X <%= speciality.price  %> = <%= "#{speciality.orders.count * speciality.price}"  %>€ générés par ce cours</p>
+            <%= speciality.orders.count  %> étudiants ont téléchargé votre cours
+            Votre cours vous a rapporté<%= "#{speciality.orders.count * speciality.price}"  %></p>
           </div>
           <div class="published-date-dashboard">
             <p>
