@@ -3,7 +3,7 @@
     <strong> <h1>Mon dashboard</h1></strong>
   </div>
   <div class="affiche">
-    <div class="row">
+    <div class="row" id="fixed-row">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <% @my_orders.each do |order| %>
         <% if order.status == "payé" %>
