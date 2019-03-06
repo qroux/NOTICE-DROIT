@@ -1,46 +1,38 @@
 <div class="body-student">
-<div class="titre">
-  <strong> <h1>Mon dashboard</h1></strong>
-</div>
-
-<div class="card-body-student">
-<div class="row">
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-    <div class="affiche">
-      <% @my_orders.each do |order| %>
-      <div class="spec">
-
-      <div class="spectitle">
-        <h3><%= order.speciality.title %></h3>
-      </div>
-      <div class="chapters">
-        <% counter = 0 %>
-        <% order.speciality.chapters.each do |chapter| %>
-        <p><b> <%= counter += 1 %>. </b><%= link_to chapter.title, speciality_chapter_path(chapter.speciality, chapter) %></p>
-        <% if chapter.fiches.length > 0 %>
-        <% chapter.fiches.each do |fiche| %>
-        <div class="fiches">
-          <%= link_to fiche.title, speciality_chapter_fich_path(fiche.chapter.speciality, fiche.chapter, fiche) %>
-        </div>
-        <% end %>
-        <% end %>
-        <% end %>
-      </div>
-      <div class= "student-footer">
-          <div class="fake">
-          <div class="fake1">
-             <%= image_tag 'flashcards.png', height: 30, width: 30, crop: :fill%> Mes flashcards
-             </div>
-          <div class="fake2">
-            <%= image_tag 'calendar.png', height: 30, width: 30, crop: :fill%> Mon calendrier
+  <div class="titre">
+    <strong> <h1>Mon dashboard</h1></strong>
+  </div>
+  <div class="affiche">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <% @my_orders.each do |order| %>
+        <div class="spec">
+          <div class="spectitle">
+            <h3><%= order.speciality.title %></h3>
+          </div>
+          <div class="chapters">
+            <% counter = 0 %>
+            <% order.speciality.chapters.each do |chapter| %>
+            <p><b> <%= counter += 1 %>. </b><%= link_to chapter.title, speciality_chapter_path(chapter.speciality, chapter) %></p>
+            <% if chapter.fiches.length > 0 %>
+            <% chapter.fiches.each do |fiche| %>
+            <div class="fiches">
+              <%= link_to fiche.title, speciality_chapter_fich_path(fiche.chapter.speciality, fiche.chapter, fiche) %>
+            </div>
+            <% end %>
+            <% end %>
+            <% end %>
+          </div>
+          <div class= "student-footer">
+            <div class="fake1">
+              <%= image_tag 'flashcards.png', height: 30, width: 30, crop: :fill%> Mes flashcards
+            </div>
+            <div class="fake2">
+              <%= image_tag 'calendar.png', height: 30, width: 30, crop: :fill%> Mon calendrier
+            </div>
           </div>
         </div>
+        <% end %>
       </div>
     </div>
-    <% end %>
   </div>
-</div>
-</div>
-</div>
-</div>
-</div>
