@@ -13,4 +13,8 @@ class ApplicationController < ActionController::Base
   def current_user
     current_student || current_teacher
   end
+
+  def default_url_options
+    { host: ENV["HOST"] || "localhost:3000" }
+  end
 end
