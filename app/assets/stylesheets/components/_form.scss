@@ -10,6 +10,9 @@
       margin-bottom: 30px;
       text-align: center;
     }
+    h4{
+      text-align:center;
+    }
     .btn {
       width: 100%;
       margin-bottom: 20px;
@@ -23,6 +26,35 @@
     a {
       text-decoration: none;
     }
+}
+
+.row-edit-form{
+  display: flex;
+  justify-content: space-around;
+
+  .link-to-delete-account {
+    margin-top: 18px;
+  }
+  a{
+    text-decoration:none;
+    color: black;
+    font-size: 14px;
+  }
+
+  a:hover{
+    color: #ed5360;
+  }
+  .back-to-home-page {
+    margin-top: 18px;
+  }
+    a{
+    text-decoration:none;
+    color: black;
+    font-size: 14px;
+  }
+  a:hover{
+    color: #ed5360;
+  }
 }
 
 .form-inline {
@@ -40,6 +72,5 @@
 input:-webkit-autofill{
 -webkit-box-shadow: 0 0 0 1000px white inset;
 color: black;}
-
 
 
