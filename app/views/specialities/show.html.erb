@@ -1,60 +1,62 @@
 <div class = "card-container">
-  <div class="card-show">
-    <div class="card-header">
-      <div class="card-author-show">
-        <h3>
-          <%= cl_image_tag @speciality.teacher.avatar, height: 300, width: 340, crop: :fill, gravity: :face, :class => "avatar" %>
-          <%= @speciality.teacher.pseudo %>
-        </h3>
+  <div class = "card-container-show">
+    <div class="card-show">
+      <div class="card-header">
+        <div class="card-author-show">
+          <h3>
+            <%= cl_image_tag @speciality.teacher.avatar, height: 300, width: 340, crop: :fill, gravity: :face, :class => "avatar" %>
+            <%= @speciality.teacher.pseudo %>
+          </h3>
+        </div>
       </div>
-    </div>
-    <div class="card-body">
-      <div class="card-speciality_title">
-        <h1><%= @speciality.title %></h1>
-      </div>
+      <div class="card-body">
+        <div class="card-speciality_title">
+          <h1><%= @speciality.title %></h1>
+        </div>
 
-      <div class ="card-chapters_fiches">
-        <% counter = 0 %>
-        <% @speciality.chapters.each do |chapter| %>
-          <div class="card-chapters-show">
-            <p>
-              <% if current_teacher.nil? %>
-                <%= link_to speciality_chapter_path(chapter.speciality, chapter) do %>
-                 <b><%= counter += 1 %> . </b>
-                 <%=  chapter.title %>
-                 <% end %>
-              <% else %>
-                <b><%= counter += 1 %>. </b><%= chapter.title %>
-              <% end %>
-            </p>
-          </div>
-          <div class="row1">
-            <% chapter.fiches.each do |fiche| %>
-            <div class="card-fiches-title">
+        <div class ="card-chapters_fiches">
+          <% counter = 0 %>
+          <% @speciality.chapters.each do |chapter| %>
+            <div class="card-chapters-show">
               <p>
                 <% if current_teacher.nil? %>
-                  <%= link_to fiche.title, speciality_chapter_fich_path(fiche.chapter.speciality, fiche.chapter, fiche) %>
+                  <%= link_to speciality_chapter_path(chapter.speciality, chapter) do %>
+                   <b><%= counter += 1 %> . </b>
+                   <%=  chapter.title %>
+                   <% end %>
                 <% else %>
-                  <%= fiche.title %>
+                  <b><%= counter += 1 %>. </b><%= chapter.title %>
                 <% end %>
               </p>
             </div>
-            <%end%>
-          </div>
-        <% end %>
+            <div class="row1">
+              <% chapter.fiches.each do |fiche| %>
+              <div class="card-fiches-title">
+                <p>
+                  <% if current_teacher.nil? %>
+                    <%= link_to fiche.title, speciality_chapter_fich_path(fiche.chapter.speciality, fiche.chapter, fiche) %>
+                  <% else %>
+                    <%= fiche.title %>
+                  <% end %>
+                </p>
+              </div>
+              <%end%>
+            </div>
+          <% end %>
+        </div>
       </div>
-    </div>
-    <div class="card-footer">
-      <div class="published-date">
-        <p>
-          <i class="far fa-check-circle"></i>
-          <% if (Time.now - @speciality.updated_at).to_i/24/60/60 == 1 %>    Mise à jour il y à <%= (Time.now - @speciality.updated_at).to_i/24/60/60 %> jour
-           <% elsif ((Time.now - @speciality.updated_at).to_i/24/60/60) > 1 %>
-            Mise à jour il y à <%= (Time.now - @speciality.updated_at).to_i/24/60/60 %> jours
-            <% elsif %>
-             Crée aujourd'hui
-           <% end %>
-        </p>
+      <div class="card-footer">
+        <div class="published-date">
+          <p>
+            <i class="far fa-check-circle"></i>
+            <% if (Time.now - @speciality.updated_at).to_i/24/60/60 == 1 %>    Mise à jour il y à <%= (Time.now - @speciality.updated_at).to_i/24/60/60 %> jour
+             <% elsif ((Time.now - @speciality.updated_at).to_i/24/60/60) > 1 %>
+              Mise à jour il y à <%= (Time.now - @speciality.updated_at).to_i/24/60/60 %> jours
+              <% elsif %>
+               Crée aujourd'hui
+             <% end %>
+          </p>
+        </div>
       </div>
     </div>
   </div>
