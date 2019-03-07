@@ -28,7 +28,7 @@
                 <%="#{speciality.orders.count * speciality.price}" %>
                 <i class="fas fa-euro-sign"></i>
               <% elsif speciality.orders.count == 0%>
-               <p>Votre cours n'a pas encore été téléchargé</p>
+                <p>Votre cours n'a pas encore été téléchargé</p>
               <% else speciality.orders.count > 1%>
                 <%= speciality.orders.count  %>
                 <i class="fas fa-download"></i>
@@ -38,46 +38,45 @@
             </div>
           </div>
         </div>
-
-          <div class="dashboard-chapters_fiches">
-            <ol>
-              <% speciality.chapters.each do |chapter|%>
+        <div class="dashboard-chapters_fiches">
+          <ol>
+            <% speciality.chapters.each do |chapter|%>
+            <div class="dashboard-row">
+              <div class="dashboard-chapters">
+                <li><%= chapter.title %></li>
+              </div>
+              <div class="dashboard-edit-chapitre">
+                <p> <%= link_to edit_speciality_chapter_path(speciality, chapter) do %>
+                  <i class="far fa-edit"></i>
+                  <% end %>
+                </p>
+              </div>
+            </div>
+            <div class="dashboard-fiches">
+              <% chapter.fiches.each do |fiche| %>
               <div class="dashboard-row">
-                <div class="dashboard-chapters">
-                  <li><%= chapter.title %></li>
+                <div class="dashboard-fiches-title">
+                  <h3><%= fiche.title  %></h3>
                 </div>
-                <div class="dashboard-edit-chapitre">
-                  <p> <%= link_to edit_speciality_chapter_path(speciality, chapter) do %>
-                    <i class="far fa-edit"></i>
+                <div class="dashboard-edit-fiche">
+                  <p> <%= link_to edit_speciality_chapter_fich_path(fiche.chapter.speciality.id, fiche.chapter.id, fiche) do %>
+                    <i class="farfiches far fa-edit"></i>
                     <% end %>
                   </p>
                 </div>
               </div>
-              <div class="dashboard-fiches">
-                <% chapter.fiches.each do |fiche| %>
-                <div class="dashboard-row">
-                  <div class="dashboard-fiches-title">
-                    <h3><%= fiche.title  %></h3>
-                  </div>
-                  <div class="dashboard-edit-fiche">
-                    <p> <%= link_to edit_speciality_chapter_fich_path(fiche.chapter.speciality.id, fiche.chapter.id, fiche) do %>
-                      <i class="farfiches far fa-edit"></i>
-                      <% end %>
-                    </p>
-                  </div>
-                </div>
-                <% end %>
-                <div class="dashboard-add-fiche">
-                  <p> <%= link_to "+ ajouter une fiche", new_speciality_chapter_fich_path(speciality, chapter) %>
-                  </p>
-                </div>
-              </div>
               <% end %>
-              <li><p> <%= link_to "Ajouter un chapitre", new_speciality_chapter_path(speciality) %>
-              </p></li>
-            </ol>
-          </div>
+              <div class="dashboard-add-fiche">
+                <p> <%= link_to "+ ajouter une fiche", new_speciality_chapter_fich_path(speciality, chapter) %>
+                </p>
+              </div>
+            </div>
+            <% end %>
+            <li><p> <%= link_to "Ajouter un chapitre", new_speciality_chapter_path(speciality) %>
+            </p></li>
+          </ol>
         </div>
+      </div>
       <div class="dashboard-footer">
         <div class="published-date-dashboard">
           <p>
@@ -95,11 +94,10 @@
     <% end %>
   </div>
   <div class="new-speciality">
-  <% if current_teacher.nil? %>
-  <% else %>
-  <%= link_to "Ajouter un cours", new_speciality_path, class: "about-button" %>
-  <% end %>
+    <% if current_teacher.nil? %>
+    <% else %>
+    <%= link_to "Ajouter un cours", new_speciality_path, class: "about-button" %>
+    <% end %>
+  </div>
 </div>
-</div>
-
 </div>
