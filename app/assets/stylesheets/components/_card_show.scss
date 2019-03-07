@@ -3,7 +3,7 @@
   background-image: image-url('matiere2-resize.jpg');
   background-size: cover;
   background-color: (-225deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)50%);
-  padding-bottom: 5%;
+  padding-bottom: 8%;
 }
 
 .row1{
@@ -34,6 +34,24 @@
   }
 }
 
+.lien-retour {
+  padding-top: 24px;
+  display:flex;
+  justify-content: center;
+  a{
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 20px;
+    line-height: 24px;
+    padding: 7px 10px;
+  }
+  a:hover {
+    color: #00E4D6;
+    border: 1px solid #00E4D6;
+    text-decoration: none;
+  }
+}
 
 
 .card-fiches-title {
@@ -44,19 +62,24 @@
   padding: 0 1rem;
   text-transform: uppercase;
   white-space: nowrap;
-  p a {
+
+  li { list-style: none;
     color: black;
     border: 1px solid #5eddd2;
     border-radius: 2px;
     padding: 5px 5px;
+    width: fit-content;
   }
 }
 
 .card-fiches-title {
-   a:hover {
+   li:hover {
     background-color: #5eddd2;
-    color: black;
     border-color: #5eddd2;
+    a:hover {
+      text-decoration: none;
+     color: black;
+    }
   }
 }
 

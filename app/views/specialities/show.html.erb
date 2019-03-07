@@ -30,17 +30,19 @@
               </p>
             </div>
             <div class="row1">
+              <ul>
               <% chapter.fiches.each do |fiche| %>
               <div class="card-fiches-title">
                 <p>
                   <% if current_teacher.nil? %>
-                    <%= link_to fiche.title, speciality_chapter_fich_path(fiche.chapter.speciality, fiche.chapter, fiche) %>
+                    <li><%= link_to fiche.title, speciality_chapter_fich_path(fiche.chapter.speciality, fiche.chapter, fiche) %></li>
                   <% else %>
-                    <%= fiche.title %>
+                    <li><%= fiche.title %></li>
                   <% end %>
                 </p>
               </div>
               <%end%>
+              </ul>
             </div>
           <% end %>
         </div>
@@ -58,6 +60,9 @@
           </p>
         </div>
       </div>
+    </div>
+    <div class="lien-retour">
+      <%= link_to "Retour", :back %>
     </div>
   </div>
 </div>
