@@ -63,8 +63,14 @@
           <div class="speciality-count">
             <p>
               <i class="euros fas fa-euro-sign"></i>
-            <%= speciality.orders.count  %> étudiants ont téléchargé votre cours
-            Votre cours vous a rapporté<%= "#{speciality.orders.count * speciality.price}"  %></p>
+              <% if speciality.orders.count == 1%>
+                <%= speciality.orders.count  %> étudiant a téléchargé votre cours - Votre cours vous a rapporté <%= "#{speciality.orders.count * speciality.price}" %>€
+              <% elsif speciality.orders.count == 0%>
+                Votre cours n'a pas encore été téléchargé
+              <% else speciality.orders.count > 1%>
+                <%= speciality.orders.count  %> étudiants ont téléchargé votre cours - Votre cours vous a rapporté <%= "#{speciality.orders.count * speciality.price}" %>€
+              <% end %>
+            </p>
           </div>
           <div class="published-date-dashboard">
             <p>
