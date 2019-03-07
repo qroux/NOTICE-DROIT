@@ -7,19 +7,37 @@
  display: flex;
  align-items: center;
  justify-content: center;
+ @media screen and (max-width: 360px) {
+    padding-bottom: 35px;
+  }
 
 }
+
 .banner-content h1 {
  font-size: 55px;
  font-weight: bold;
  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+ @media screen and (max-width: 360px) {
+    font-size: 40px;
+  }
+
 }
+
+.banner-content h3 {
+   @media screen and (max-width: 360px) {
+    font-size: 25px;
+  }
+}
+
 .banner-content p {
  font-size: 20px;
  font-weight: lighter;
  color: rgb(255, 255, 255);
  opacity: 0.7;
  margin-bottom: 15px;
+ @media screen and (max-width: 320px) {
+    font-size: 15px;
+  }
 }
 
 .icon-container{
@@ -62,6 +80,9 @@
     text-align:center;
      padding: 20px;
      margin: 0px -34px 11.5px;
+     @media screen and (max-width: 320px) {
+    font-size: 14px;
+  }
   }
 
   h4{
