@@ -26,15 +26,6 @@ ActiveRecord::Schema.define(version: 2019_03_05_163145) do
     t.index ["speciality_id"], name: "index_chapters_on_speciality_id"
   end
 
-  create_table "favorites", force: :cascade do |t|
-    t.bigint "student_id"
-    t.bigint "fiche_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["fiche_id"], name: "index_favorites_on_fiche_id"
-    t.index ["student_id"], name: "index_favorites_on_student_id"
-  end
-
   create_table "fiches", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -112,8 +103,6 @@ ActiveRecord::Schema.define(version: 2019_03_05_163145) do
   end
 
   add_foreign_key "chapters", "specialities"
-  add_foreign_key "favorites", "fiches", column: "fiche_id"
-  add_foreign_key "favorites", "students"
   add_foreign_key "fiches", "chapters"
   add_foreign_key "orders", "specialities"
   add_foreign_key "orders", "students"
