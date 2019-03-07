@@ -55,12 +55,25 @@ a {
 .dashboard-speciality-title {
   margin: 0 auto;
   width: 88%;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom : solid 0.3px;
+  border-bottom-color: lighten(#333, 65%);
   h1 {
     padding-bottom: 18px;
-    border-bottom : solid 0.3px;
-    border-bottom-color: lighten(#333, 65%);
   }
+}
+
+.speciality-count .symbols {
+    font-size: 25px;
+    color: lighten(#333, 45%);
+  p{
+    font-size: 13px;
+    color: lighten(#333, 45%);
+    font-weight: lighter;
+  }
+  .fas{ padding-right: 5px;}
 }
 
 .dashboard-fiches-title {
@@ -71,11 +84,13 @@ a {
 
 
 .dashboard-chapters_fiches{
+  padding-top: 30px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   padding-left : 30px;
 }
+
 .dashboard-row{
   display: flex;
   justify-content: space-between;
@@ -180,18 +195,9 @@ a {
 .dashboard-footer {
    padding-top: 10px;
   background-color: #f9f9f9;
+  display: flex;
+  justify-content: flex-end;
 }
-
-.speciality-count p {
-    padding-bottom: 10px;
-    font-size: 13px;
-    font-weight: lighter;
-    color: lighten(#333, 45%);
-    margin-bottom: 0px;
-    padding-left: 0px;
-    padding-right: 5px;
-
-  }
 
 
 .published-date-dashboard p {
