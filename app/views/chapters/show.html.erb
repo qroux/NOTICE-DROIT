@@ -1,7 +1,7 @@
 <div class="container">
   <div class= "frame">
     <div class="speciality-chapter-title">
-      <h3>Spécialité : <%= @chapter.speciality.title %></h3>
+      <h3>Cours : <%= @chapter.speciality.title %></h3>
       <p>Chapitre : <%= @chapter.title %></p>
     </div>
     <div class="link_to_retour">
@@ -9,7 +9,7 @@
     </div>
   </div>
 
-  <% if @order.status == "payé" %>
+  <% if @order.present? && @order.status == "payé" %>
     <div class="liseuse-pdf">
       <iframe src="https://docs.google.com/viewer?url=<%= @chapter.content %>&embedded=true"
       style="width:100%; height:450px;" frameborder="0"></iframe>

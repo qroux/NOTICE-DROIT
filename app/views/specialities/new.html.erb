@@ -2,14 +2,14 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <div class="form-login">
-        <h2>Ajouter une spécialité</h2>
+        <h2>Ajouter un cours</h2>
         <%= simple_form_for @speciality do |f| %>
         <%= f.error_notification %>
         <div class="form-inputs">
-          <%= f.input :title, label: "Nom de la spécialité"%>
+          <%= f.input :title, label: "Nom du cours"%>
         </div>
         <div class="form-actions">
-          <%= f.button :submit, "Créer la spécialité" %>
+          <%= f.button :submit, "Créer le cours" %>
           <div class="new-speciality">
             <%= link_to "Retour", :back %>
           </div>

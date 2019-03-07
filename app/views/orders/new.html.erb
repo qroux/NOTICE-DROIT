@@ -14,7 +14,7 @@
 
 </div>
 <% else %>
-  <strong><p>Spécialité : <%= @order.speciality.title  %> -  prix: <%= humanized_money_with_symbol(@order.speciality.price) %></p></strong>
+  <strong><p>Cours : <%= @order.speciality.title  %> -  prix: <%= humanized_money_with_symbol(@order.speciality.price) %></p></strong>
   <%= link_to "confirmer", orders_path, method: :post, class: "btn btn-success" %>
 <% end %>
 </div>
