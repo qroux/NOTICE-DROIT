@@ -5,7 +5,7 @@
     <!-- calcul du total généré par l'ensemble des cours de ce prof -->
     <% counter = 0 %>
     <% @specialities.each do |speciality| %>
-    <% counter += (speciality.orders.count * speciality.price) %>
+    <% counter += (speciality.orders.count * speciality.price) - ((speciality.orders.count * speciality.price)*(0.15))  %>
     <% end %>
     <h4>Ma cagnotte: <%= counter %>€</h4>
     <!-- affichage du total généré -->
@@ -25,14 +25,14 @@
               <% if speciality.orders.count == 1%>
                 <%= speciality.orders.count  %>
                 <i class="fas fa-download"></i>
-                <%="#{speciality.orders.count * speciality.price}" %>
+                <%="#{(speciality.orders.count * speciality.price) - ((speciality.orders.count * speciality.price)*(0.15))}" %>
                 <i class="fas fa-euro-sign"></i>
               <% elsif speciality.orders.count == 0%>
                 <p>Votre cours n'a pas encore été téléchargé</p>
               <% else speciality.orders.count > 1%>
                 <%= speciality.orders.count  %>
                 <i class="fas fa-download"></i>
-                <%= "#{speciality.orders.count * speciality.price}" %>
+                <%= "#{(speciality.orders.count * speciality.price) - ((speciality.orders.count * speciality.price) * (0.15))}" %>
                 <i class="fas fa-euro-sign"></i>
               <% end %>
             </div>
