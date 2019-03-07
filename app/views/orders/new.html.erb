@@ -1,7 +1,7 @@
 
 <div class= "achats">
 <div class= "titre-achats">
-<h1>Mes achats</h1>
+<strong> <h1>Mon panier</h1></strong>
 </div>
 
 <div class= "texte-achats">
@@ -14,9 +14,16 @@
 
 </div>
 <% else %>
-  <strong><p>Cours : <%= @order.speciality.title  %> -  prix: <%= humanized_money_with_symbol(@order.speciality.price) %></p></strong>
-  <%= link_to "confirmer", orders_path, method: :post, class: "btn btn-success" %>
+<div class= "panier-total">
+<div class= "texte-panier">
+  <p>Cours : <strong><%= @order.speciality.title %></strong>
+    </div>
+    <div class= "your-panier">
+    <br> Total de votre panier: <strong><%= humanized_money_with_symbol(@order.speciality.price) %></p></strong>
+  </div>
+  <br> <%= link_to "Valider ma commande", orders_path, method: :post, class: "btn btn-success" %>
 <% end %>
+</div>
 </div>
 </div>
 
