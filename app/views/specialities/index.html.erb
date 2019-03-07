@@ -5,7 +5,7 @@
       <h3>La solution qu'il vous faut pour réussir vos examens</h3>
       <br>
       <br>
-      <p>Quelle spécialité recherchez-vous ?</p>
+      <p>Quel cours recherchez-vous ?</p>
       <%= form_tag specialities_path, method: :get do %>
       <%= text_field_tag :query,
       params[:query],
@@ -17,7 +17,7 @@
       <% end %>
       <br>
       <br>
-      <%= link_to "Accédez à l'ensemble des spécialités", specialities_path, class: "speciality-button" %>
+      <%= link_to "Accédez à l'ensemble des cours", specialities_path, class: "speciality-button" %>
     </div>
   </div>
 </div>
@@ -42,7 +42,7 @@
       <% else %>
       <div class= "button-buy">
         <% a = speciality.orders.find_by(student_id: current_student.id) %>
-        <%= link_to "terminer la commande", new_order_payment_path(order_id: a.id) %>
+        <%= link_to "Terminer la commande", new_order_payment_path(order_id: a.id) %>
       </div>
       <% end %>
       <% else %>
@@ -111,7 +111,7 @@
   <div class="button-add-speciality">
     <% if current_teacher.nil? %>
     <% else %>
-    <%= link_to "+ Ajouter une spécialité", new_speciality_path %>
+    <%= link_to "+ Ajouter un cours", new_speciality_path %>
     <% end %>
   </div>
 </div>
