@@ -21,11 +21,11 @@
               <p>
                 <% if current_teacher.nil? %>
                   <%= link_to speciality_chapter_path(chapter.speciality, chapter) do %>
-                   <b><%= counter += 1 %> . </b>
+                   <b>Chapitre <%= counter += 1 %> . </b>
                    <%=  chapter.title %>
                    <% end %>
                 <% else %>
-                  <b><%= counter += 1 %>. </b><%= chapter.title %>
+                  <b>Chapitre<%= counter += 1 %>. </b><%= chapter.title %>
                 <% end %>
               </p>
             </div>
@@ -62,7 +62,7 @@
       </div>
     </div>
     <div class="lien-retour">
-      <%= link_to "Retour", :back %>
+      <%= link_to "Retour", specialities_path %>
     </div>
   </div>
 </div>

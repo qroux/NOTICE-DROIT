@@ -72,6 +72,7 @@
     line-height: 24px;
     padding: 5px 5px;
     border: 1px solid;
+    box-shadow: 5px 4px 78px #9b999a;
     }
 
     .speciality-button:hover {
@@ -97,3 +98,24 @@
   font-weight: bold;
   }
 }
+
+.lien-retour {
+  padding-top: 24px;
+  display:flex;
+  justify-content: center;
+  a{
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 20px;
+    line-height: 24px;
+    padding: 7px 10px;
+    box-shadow: 5px 4px 78px #9b999a;
+  }
+  a:hover {
+    color: #00E4D6;
+    border: 1px solid #00E4D6;
+    text-decoration: none;
+  }
+}
+
