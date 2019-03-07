@@ -35,7 +35,10 @@
               <div class="card-fiches-title">
                 <p>
                   <% if current_teacher.nil? %>
-                    <li><%= link_to fiche.title, speciality_chapter_fich_path(fiche.chapter.speciality, fiche.chapter, fiche) %></li>
+                  <div class="logo-fiche">
+                    <%= image_tag'icone-fiche.png', height: 20, width: 20 %>
+                  </div>
+                   <li>  <%= link_to fiche.title, speciality_chapter_fich_path(fiche.chapter.speciality, fiche.chapter, fiche) %></li>
                   <% else %>
                     <li><%= fiche.title %></li>
                   <% end %>

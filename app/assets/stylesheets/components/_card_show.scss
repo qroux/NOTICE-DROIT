@@ -9,6 +9,9 @@
 .row1{
   display: flex;
   justify-content: start;
+  ul{
+    padding-left: 2px;
+  }
 }
 
 .card-show {
@@ -43,8 +46,14 @@
   padding: 0 1rem;
   text-transform: uppercase;
   white-space: nowrap;
+  display:flex;
+  justify-content: space around;
 
-  li { list-style: none;
+  li{
+    padding-left: 22px;
+  }
+
+  li a{ list-style: none;
     color: black;
     border: 1px solid #5eddd2;
     border-radius: 2px;
