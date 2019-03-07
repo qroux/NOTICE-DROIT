@@ -15,9 +15,30 @@
     <div class = "dashboard">
       <div class="dashboard-body">
         <div class="dashboard-speciality-title">
-          <h1>
-          <%= speciality.title %>
-          </h1>
+          <div class="speciality-title">
+            <h1>
+            <%= speciality.title %>
+            </h1>
+          </div>
+          <div class="speciality-count">
+            <div class= "symbols">
+              <% if speciality.orders.count == 1%>
+                <%= speciality.orders.count  %>
+                <i class="fas fa-download"></i>
+                <%="#{speciality.orders.count * speciality.price}" %>
+                <i class="fas fa-euro-sign"></i>
+              <% elsif speciality.orders.count == 0%>
+               <p>Votre cours n'a pas encore été téléchargé</p>
+              <% else speciality.orders.count > 1%>
+                <%= speciality.orders.count  %>
+                <i class="fas fa-download"></i>
+                <%= "#{speciality.orders.count * speciality.price}" %>
+                <i class="fas fa-euro-sign"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
           <div class="dashboard-chapters_fiches">
             <ol>
               <% speciality.chapters.each do |chapter|%>
@@ -57,32 +78,17 @@
             </ol>
           </div>
         </div>
-      </div>
       <div class="dashboard-footer">
-        <div class="dashboard-row">
-          <div class="speciality-count">
-            <p>
-              <i class="euros fas fa-euro-sign"></i>
-              <% if speciality.orders.count == 1%>
-                <%= speciality.orders.count  %> étudiant a téléchargé votre cours - Votre cours vous a rapporté <%= "#{speciality.orders.count * speciality.price}" %>€
-              <% elsif speciality.orders.count == 0%>
-                Votre cours n'a pas encore été téléchargé
-              <% else speciality.orders.count > 1%>
-                <%= speciality.orders.count  %> étudiants ont téléchargé votre cours - Votre cours vous a rapporté <%= "#{speciality.orders.count * speciality.price}" %>€
-              <% end %>
-            </p>
-          </div>
-          <div class="published-date-dashboard">
-            <p>
-              <i class="far fa-check-circle"></i>
-              <% if (Time.now - speciality.updated_at).to_i/24/60/60 == 1 %>    Mise à jour il y a <%= (Time.now - speciality.updated_at).to_i/24/60/60 %> jour
-              <% elsif ((Time.now - speciality.updated_at).to_i/24/60/60) > 1 %>
-              Mise à jour il y a <%= (Time.now - speciality.updated_at).to_i/24/60/60 %> jours
-              <% elsif %>
-              Crée aujourd'hui
-              <% end %>
-            </p>
-          </div>
+        <div class="published-date-dashboard">
+          <p>
+            <i class="far fa-check-circle"></i>
+            <% if (Time.now - speciality.updated_at).to_i/24/60/60 == 1 %>    Mise à jour il y a <%= (Time.now - speciality.updated_at).to_i/24/60/60 %> jour
+            <% elsif ((Time.now - speciality.updated_at).to_i/24/60/60) > 1 %>
+            Mise à jour il y a <%= (Time.now - speciality.updated_at).to_i/24/60/60 %> jours
+            <% elsif %>
+            Crée aujourd'hui
+            <% end %>
+          </p>
         </div>
       </div>
     </div>
