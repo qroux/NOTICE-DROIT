@@ -40,10 +40,11 @@
         </div>
         <div class="dashboard-chapters_fiches">
           <ol>
+            <% counter = 0 %>
             <% speciality.chapters.each do |chapter|%>
             <div class="dashboard-row">
               <div class="dashboard-chapters">
-                <li><%= chapter.title %></li>
+                <p><b>Chapitre <%= counter += 1 %>.</b> <%= chapter.title %>
               </div>
               <div class="dashboard-edit-chapitre">
                 <p> <%= link_to edit_speciality_chapter_path(speciality, chapter) do %>

@@ -14,7 +14,7 @@
           <div class="chapters">
             <% counter = 0 %>
             <% order.speciality.chapters.each do |chapter| %>
-            <p><b> <%= counter += 1 %>. </b><%= link_to chapter.title, speciality_chapter_path(chapter.speciality, chapter) %></p>
+            <p><b>Chapitre <%= counter += 1 %>. </b><%= link_to chapter.title, speciality_chapter_path(chapter.speciality, chapter) %></p>
             <% if chapter.fiches.length > 0 %>
             <% chapter.fiches.each do |fiche| %>
             <div class="fiches">
