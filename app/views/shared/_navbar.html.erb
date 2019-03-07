@@ -6,7 +6,7 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <%= link_to'Qui sommes-nous ?', about_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to'Nos abonnements', abonnements_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to'Nos offres', abonnements_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% if teacher_signed_in? %>
     <!-- Avatar with dropdown menu -->
     <div class="navbar-wagon-item">
@@ -57,8 +57,8 @@
     </div>
     <% else %>
     <!-- Login link (when logged out) -->
-    <%= link_to t(".sign_in", default: "Se connecter en tant qu'étudiant"), new_student_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to t(".sign_in", default: "Se connecter en tant que professeur"), new_teacher_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to t(".sign_in", default: "Je suis un étudiant"), new_student_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to t(".sign_in", default: "Je suis un professeur"), new_teacher_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
   <!-- Dropdown list appearing on mobile only -->
