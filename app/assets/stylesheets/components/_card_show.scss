@@ -26,8 +26,8 @@
   @media screen and (min-width: 360px) {
     width: 34rem;
   }
-  @media screen and (min-width: 480px) {
-    width: 55rem;
+  @media screen and (min-width: 470px) {
+    width: 47rem;
   }
   @media screen and (min-width: 767px) {
     width: 63rem;
@@ -48,11 +48,11 @@
     h1 {
       font-size: 20px;
     }
-   a{ font-size: 8px;}
+   a{ font-size: 26px;}
   }
 
   @media screen and (max-width: 320px) {
-  a{ font-size: 6px;}
+  a{ font-size: 26px;}
   }
 }
 
@@ -85,6 +85,13 @@
     border-radius: 2px;
     padding: 5px 5px;
     width: fit-content;
+    @media screen and (max-width: 414px) {
+      font-size:8px;
+    }
+    @media screen and (max-width: 320px) {
+      font-size:6px;
+
+    }
   }
 }
 
@@ -113,12 +120,6 @@
   }
 }
 
-.card-footer{
-  @media screen and (max-width: 414px) {
-    p {font-size:8px;}
-  }
-
-}
 .card-chapters-show a:hover{
   color: #ff4d4d;
 }
