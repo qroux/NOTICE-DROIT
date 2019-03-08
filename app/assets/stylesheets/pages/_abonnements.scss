@@ -28,3 +28,13 @@ flex-flow: wrap;
 }
 
 
+
+.title-a-propos{
+  h4{
+    @media screen and (max-width: 414px) {
+      font-size: 13px;
+    }
+  }
+}
+
+

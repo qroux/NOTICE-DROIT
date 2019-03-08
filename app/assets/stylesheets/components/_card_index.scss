@@ -4,7 +4,7 @@
   border-radius: 3px;
   box-shadow: hsla(0, 0, 0, .2) 0 4px 2px -2px;
   margin: 43px auto;
-  width: 35rem;
+  width: 32rem;
   @media screen and (min-width: 480px) {
     width: 55rem;
   }
@@ -75,7 +75,6 @@
     margin-top: 0px;
     margin-bottom: 14px;
   }
-
 }
 
 .card-chapters_fiches{
@@ -113,16 +112,23 @@
 }
 
 .card-footer {
+  display:flex;
+  justify-content: space-between;
+  padding-left: 32px;
+  padding-right: 34px;
   padding-top: 10px;
   background-color: #f9f9f9;
 }
 
 .published-date p {
-    padding-left: 75%;
     padding-bottom: 10px;
     font-size: 13px;
     font-weight: lighter;
     color: lighten(#333, 45%);
+     @media screen and (max-width: 414px) {
+      font-size: 12px;
+      padding-top: 5px;
+    }
   }
 
 .far {
@@ -135,4 +141,16 @@ left:0;
 right:0;
 top:0;
 bottom: 0;
+}
+
+.ranking {
+  @media screen and (max-width: 414px) {
+   padding-bottom:12px;
+  }
+  .fas{
+    color:#ffcb4e;
+    @media screen and (max-width: 414px) {
+      font-size: 12px;
+    }
+  }
 }
