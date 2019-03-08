@@ -17,8 +17,13 @@
             <p><b>Chapitre <%= counter += 1 %>. </b><%= link_to chapter.title, speciality_chapter_path(chapter.speciality, chapter) %></p>
             <% if chapter.fiches.length > 0 %>
             <% chapter.fiches.each do |fiche| %>
-            <div class="fiches">
-              <%= link_to fiche.title, speciality_chapter_fich_path(fiche.chapter.speciality, fiche.chapter, fiche) %>
+            <div class="row-dashboard-fiche">
+              <div class="logo-fiche">
+                      <%= image_tag'icone-fiche.png', height: 20, width: 20 %>
+                    </div>
+              <div class="fiches">
+                <%= link_to fiche.title, speciality_chapter_fich_path(fiche.chapter.speciality, fiche.chapter, fiche) %>
+              </div>
             </div>
             <% end %>
             <% end %>
