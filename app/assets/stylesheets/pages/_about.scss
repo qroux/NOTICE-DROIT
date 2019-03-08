@@ -1,9 +1,42 @@
 .a-propos {
-    background: #fff;
-    border: 1px solid #ddd;
-    margin: 30px 70px;
+  background: #fff;
+  border: 1px solid #ddd;
+  margin: 30px 70px;
+
+  @media screen and (max-width:  640px){
+      padding: 10px;
+      margin: 16px 0px;
+    }
+
+  @media screen and (max-width:  320px){
+      margin: 16px 0px;
+    }
+
+  h3{
+    @media screen and (max-width:  640px){
+      font-size: 26px;
+    }
+  }
+
+  p{
+    @media screen and (max-width:  640px){
+      font-size: 10px;
+    }
+  }
+
+  h4{
+    strong{
+      @media screen and (max-width:  640px){
+        font-size: 18px;
+      }
+    }
+  }
+
+  ul{
+    li{
+      @media screen and (max-width:  640px){
+        font-size: 10px;
+      }
+    }
+  }
 }
-
-
-
-
