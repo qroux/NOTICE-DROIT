@@ -16,12 +16,6 @@
 
 }
 
-// .affiche{
-//   display: flex;
-//   justify-content: center;
-//   width: 100%;
-
-// }
 
 
 
@@ -77,14 +71,23 @@
     padding-top: 20px;
     font-size: 20px !important;
     color:#333333;
+    @media screen and (max-width:  950px){
+      font-size: 15px!important;
+      padding-left: 18px;
+   }
     }
 
   a{
+
     color: #333333;
     text-decoration: none;
     font-size: 20px !important;
     padding-left: 15px;
+    padding-right: 15px;
     font-weight: none;
+    @media screen and (max-width: 950px){
+    font-size: 15px!important;
+   }
   }
   a:hover{
     color: #ff4d4d;
@@ -92,8 +95,21 @@
   }
   }
 
-.fiches{
-  margin-left: 90px;
+.row-dashboard-fiche{
+  display: flex;
+  justify-content: left;
+  padding-left: 65px;
+  @media screen and (max-width: 950px){
+    padding-left: 27px;
+  }
+  @media screen and (max-width: 320px){
+    padding-left: 6px;
+  }
+}
+
+.fiches {
+  margin-left: 14px;
+  margin-top: 5px;
   margin-bottom: 10px;
   font-size: 16px;
   border: 1px solid #5eddd2;
@@ -103,21 +119,21 @@
   height: 1.8rem;
   line-height: 1.6rem;
   letter-spacing: 1px;
-  padding-left: 0px;
-  padding-right: 4px;
-  text-align: center;
   text-transform: uppercase;
   flex-wrap: wrap;
   width: -webkit-fit-content;
-  max-width: 55%;
-  overflow: hidden;
-  text-overflow: ellipsis;
+
+
 
   a{
     overflow: hidden;
     color: #333333;
     text-decoration: none;
     font-size: 14px !important;
+    @media screen and (max-width: 950px){
+    font-size: 9px!important;
+    padding: 4px;
+   }
   }
   a:hover{
     color: #ff4d4d;
@@ -126,6 +142,17 @@
 
 }
 
+
+.logo-fiche {
+  @media screen and (max-width: 320px){
+    img{ width:14px;
+      height: 14px;
+    }
+  }
+}
+
+
+
 .student-footer {
   background-color: #f9f9f9;
   padding-bottom: 15px;
@@ -133,17 +160,24 @@
   font-size: 15px;
   display: flex;
   justify-content: space-around;
-    width: 100%;
+  width: 100%;
 
   .fake1 {
 
     font-size: 12px;
+    @media screen and (max-width: 414px){
+    font-size: 9px;
+    padding: 4px;
+   }
   }
     .fake2 {
-     padding-left: 55px;
-    font-size: 12px;
-  }
-
+      padding-left: 55px;
+      font-size: 12px;
+      @media screen and (max-width: 414px){
+      font-size: 9px;
+      padding: 4px;
+      }
+    }
 }
 
 

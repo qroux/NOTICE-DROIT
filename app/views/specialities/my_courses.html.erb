@@ -7,7 +7,7 @@
     <% @specialities.each do |speciality| %>
     <% counter += (speciality.orders.count * speciality.price) - ((speciality.orders.count * speciality.price)*(0.15))  %>
     <% end %>
-    <h4>Ma cagnotte: <%= counter %>€</h4>
+    <h4>Total: <%= counter %>€</h4>
     <!-- affichage du total généré -->
   </div>
   <div class = "dashboard-container">
@@ -73,8 +73,8 @@
               </div>
             </div>
             <% end %>
-            <li><p> <%= link_to "Ajouter un chapitre", new_speciality_chapter_path(speciality) %>
-            </p></li>
+           <strong> <p> <%= link_to "Ajouter un chapitre", new_speciality_chapter_path(speciality) %> </strong>
+            </p>
           </ol>
         </div>
       </div>

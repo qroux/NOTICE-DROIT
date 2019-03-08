@@ -20,6 +20,12 @@
   box-shadow: hsla(0, 0, 0, .2) 0 4px 2px -2px;
   margin: 43px auto;
   width: 35rem;
+  @media screen and (min-width: 320px) {
+    width: 31rem;
+  }
+  @media screen and (min-width: 360px) {
+    width: 34rem;
+  }
   @media screen and (min-width: 480px) {
     width: 55rem;
   }
@@ -37,6 +43,26 @@
   }
 }
 
+.card-body{
+  @media screen and (max-width: 414px) {
+    h1 {
+      font-size: 20px;
+    }
+   a{ font-size: 8px;}
+  }
+
+  @media screen and (max-width: 320px) {
+  a{ font-size: 6px;}
+  }
+}
+
+
+.card-chapters-show p{
+  @media screen and (max-width: 414px) {
+      a {font-size: 14px;
+      }
+    }
+}
 
 .card-fiches-title {
   font-size: 1.2rem;
@@ -63,14 +89,14 @@
 }
 
 .card-fiches-title {
-   li:hover {
-    background-color: #5eddd2;
-    border-color: #5eddd2;
+
     a:hover {
       text-decoration: none;
-     color: black;
+      color: black;
+      background-color: #5eddd2;
+      border-color: #5eddd2;
     }
-  }
+
 }
 
 .card-author-show {
@@ -87,6 +113,12 @@
   }
 }
 
+.card-footer{
+  @media screen and (max-width: 414px) {
+    p {font-size:8px;}
+  }
+
+}
 .card-chapters-show a:hover{
   color: #ff4d4d;
 }
