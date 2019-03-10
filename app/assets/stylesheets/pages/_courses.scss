@@ -91,7 +91,6 @@
   }
   a:hover{
     color: #ff4d4d;
-    font-size: 20px !important;
   }
   }
 
@@ -136,8 +135,8 @@
    }
   }
   a:hover{
-    color: #ff4d4d;
-      font-size: 14px !important;
+    color: #333333;
+    background-color: #5eddd2;
   }
 
 }
@@ -189,4 +188,5 @@
 
 #fixed-row {
   width: 100%;
+  margin-left: 0;
 }
