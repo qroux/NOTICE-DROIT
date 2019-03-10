@@ -10,15 +10,11 @@
    <%= link_to @speciality.title, speciality_path(@speciality), class: "btn btn-success" %>
   <div class= "retour-achats">
   <%= link_to "Retour", specialities_path%>
-
-
 </div>
 <% else %>
-<div class= "panier-total">
-<div class= "texte-panier">
+<div class= "texte-achats">
   <p>Cours : <strong><%= @order.speciality.title %></strong>
-    </div>
-    <div class= "your-panier">
+    <div class= "texte-achats">
     <br> Total de votre panier: <strong><%= humanized_money_with_symbol(@order.speciality.price) %></p></strong>
   </div>
   <br> <%= link_to "Valider ma commande", orders_path, method: :post, class: "btn btn-success" %>

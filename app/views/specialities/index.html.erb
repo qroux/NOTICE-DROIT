@@ -96,9 +96,9 @@
       <div class="published-date">
         <p>
           <i class="far fa-check-circle"></i>
-          <% if (Time.now - speciality.updated_at).to_i/24/60/60 == 1 %>    Mise à jour il y à <%= (Time.now - speciality.updated_at).to_i/24/60/60 %> jour
+          <% if (Time.now - speciality.updated_at).to_i/24/60/60 == 1 %>    Mise à jour il y a <%= (Time.now - speciality.updated_at).to_i/24/60/60 %> jour
           <% elsif ((Time.now - speciality.updated_at).to_i/24/60/60) > 1 %>
-          Mise à jour il y à <%= (Time.now - speciality.updated_at).to_i/24/60/60 %> jours
+          Mise à jour il y a <%= (Time.now - speciality.updated_at).to_i/24/60/60 %> jours
           <% elsif %>
           Crée aujourd'hui
           <% end %>
