@@ -32,19 +32,25 @@
   p{ font-size: 20px;
 
   }
+  img {
+    height: 0;
+    width: 0;
+  }
 }
   </style>
 </head>
 
 <body class="rails-default-error-page">
-  <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <div>
-      <h1>Oupsi Doupsi</h1>
-      <p>Une erreur est survenue<br> ce n'est pas grave</p>
+  <div style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)50%), url('./images/lab.jpg')">
+    <div class="dialog">
+      <div>
+        <img src="./images/logo-black.png" alt="">
+        <h1>Oupsi Doupsi</h1>
+        <p>Une erreur est survenue<br> ce n'est pas grave</p>
+      </div>
+      <div class="text-error-footer">
+      <p>Vous pouvez toujours retourner sur notre page d'accueil : <a href="https://notice-droit.fr">notice-droit.fr</a></p>
     </div>
-    <div class="text-error-footer">
-    <p>Vous pouvez toujours retourner sur notre page d'accueil : <a href="https://notice-droit.fr">notice-droit.fr</a></p>
   </div>
 </body>
 </html>
